@@ -38,6 +38,7 @@ jvm_library(
     resource_strip_prefix = "plugin-resources",
     resources = glob(
         ["plugin-resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     exports = [
@@ -308,6 +309,7 @@ jvm_library(
     resource_strip_prefix = "testData",
     resources = glob(
         ["testData/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     exports = [

@@ -82,6 +82,7 @@ jvm_library(
     resource_strip_prefix = "testData/inspection",
     resources = glob(
         ["testData/inspection/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     exports = [

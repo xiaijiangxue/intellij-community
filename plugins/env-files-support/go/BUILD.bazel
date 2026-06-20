@@ -2,7 +2,9 @@ load("@rules_jvm//:jvm.bzl", "resourcegroup")
 
 resourcegroup(
     name = "go_resources",
-    srcs = glob(["resources/**/*"]),
+    srcs = glob(["resources/**/*"],
+        allow_empty = True,
+    ),
     strip_prefix = "resources",
     visibility = ["//visibility:public"],  # used by @ultimate//:dotenv-go
 )

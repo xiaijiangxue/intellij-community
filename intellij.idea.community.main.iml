@@ -68,8 +68,6 @@
     <orderEntry type="module" module-name="intellij.platform.testFramework" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.java.guiForms.designer" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.dev.plugin.main" scope="RUNTIME" />
-    <orderEntry type="module" module-name="intellij.devkit.plugin.main" scope="RUNTIME" />
-    <orderEntry type="module" module-name="intellij.eclipse" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.vcs.git.backend" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.vcs.git.shared" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.vcs.git.frontend" scope="RUNTIME" />
@@ -79,7 +77,6 @@
     <orderEntry type="module" module-name="intellij.maven" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.moduleSet.plugin.main" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.regexp" scope="RUNTIME" />
-    <orderEntry type="module" module-name="intellij.vcs.svn" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.testng" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.java.langInjection" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.xml.langInjection" scope="RUNTIME" />
@@ -88,12 +85,9 @@
     <orderEntry type="module" module-name="intellij.tasks" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.tasks.java" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.vcs.github" scope="RUNTIME" />
-    <orderEntry type="module" module-name="intellij.vcs.hg" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.relaxng" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.gradle.java" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.platform.remoteServers.impl" scope="RUNTIME" />
-    <orderEntry type="module" module-name="intellij.javaFX.community" scope="RUNTIME" />
-    <orderEntry type="module" module-name="intellij.javaFX.jps" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.java.manifest" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.yaml.backend" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.tasks.core" scope="RUNTIME" />
@@ -120,7 +114,6 @@
     <orderEntry type="module" module-name="intellij.emojipicker" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.gradle.dependencyUpdater" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.settingsSync.core" scope="RUNTIME" />
-    <orderEntry type="module" module-name="intellij.settingsSync" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.java.featuresTrainer" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.ml.models.local.java" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.laf.macos" scope="RUNTIME" />
@@ -169,7 +162,5 @@
     <orderEntry type="module" module-name="intellij.maven.server.m36.impl" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.maven.server.m40" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.mcpserver" scope="RUNTIME" />
-    <orderEntry type="module" module-name="intellij.python.processOutput.common" scope="TEST" />
-    <orderEntry type="module" module-name="intellij.python.community.plugin" scope="RUNTIME" />
   </component>
 </module>

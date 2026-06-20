@@ -127,6 +127,7 @@ jvm_library(
     resource_strip_prefix = "testFrameworkResources",
     resources = glob(
         ["testFrameworkResources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     deps = [

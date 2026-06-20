@@ -140,6 +140,7 @@ resourcegroup(
     name = "lombok-tests_test_resources",
     srcs = glob(
         ["testData/**/*"],
+        allow_empty = True,
     ),
     strip_prefix = "testData",
 )
@@ -184,6 +185,7 @@ jvm_library(
     resource_strip_prefix = "src/test/resources",
     resources = glob(
         ["src/test/resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     runtime_deps = [

@@ -16,6 +16,7 @@ jvm_library(
     resource_strip_prefix = "src/main/resources",
     resources = glob(
         ["src/main/resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     runtime_deps = ["//platform/backend"],

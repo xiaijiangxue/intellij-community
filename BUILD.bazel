@@ -1,4 +1,5 @@
 load("@aspect_rules_lint//format:defs.bzl", "format_multirun")
+load("@jps_dynamic_deps_community//:targets.bzl", "BAZEL_TARGETS_JSON_COMMUNITY")
 load("@rules_java//java:defs.bzl", "java_binary")
 load("@rules_jvm//:jvm.bzl", "jvm_library", "kt_javac_options")
 load("//build:compiler-options.bzl", "create_kotlinc_options")
@@ -56,6 +57,7 @@ create_kotlinc_options(
 
 java_binary(
     name = "main_run",
+    data = [BAZEL_TARGETS_JSON_COMMUNITY],
     jvm_flags = [
         "--add-opens=java.base/java.io=ALL-UNNAMED",
         "--add-opens=java.base/java.lang=ALL-UNNAMED",
@@ -70,8 +72,10 @@ java_binary(
         "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED",
         "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED",
         "--add-opens=java.base/java.util.concurrent.locks=ALL-UNNAMED",
+        "--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED",
         "--add-opens=java.base/jdk.internal.vm=ALL-UNNAMED",
         "--add-opens=java.base/sun.net.dns=ALL-UNNAMED",
+        "--add-opens=java.base/sun.nio=ALL-UNNAMED",
         "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
         "--add-opens=java.base/sun.nio.fs=ALL-UNNAMED",
         "--add-opens=java.base/sun.security.ssl=ALL-UNNAMED",
@@ -126,6 +130,7 @@ java_binary(
         "-Didea.jre.check=true",
         "-Didea.is.internal=true",
         "-Didea.debug.mode=true",
+        "-Dintellij.build.bazel.targets.json.file=$(rlocationpath %s)" % BAZEL_TARGETS_JSON_COMMUNITY,
         "-Didea.config.path=$${BUILD_WORKSPACE_DIRECTORY}/config/idea",
         "-Didea.system.path=$${BUILD_WORKSPACE_DIRECTORY}/system/idea",
         "-Didea.diagnostic.opentelemetry.file=opentelemetry.json",
@@ -209,7 +214,6 @@ jvm_library(
         "//platform/testFramework",
         "//plugins/ui-designer:java-guiForms-designer",
         "//plugins/dev:dev-plugin-main",
-        "//plugins/eclipse",
         "//plugins/git4idea/backend",
         "//plugins/git4idea/shared",
         "//plugins/git4idea/frontend",
@@ -217,6 +221,7 @@ jvm_library(
         "//images",
         "//plugins/junit",
         "//plugins/maven",
+        "//plugins/maven/plugin:plugin",
         "//module-set-plugins/generated/intellij.moduleSet.plugin.main:moduleSet-plugin-main",
         "//RegExpSupport:regexp",
         "//plugins/testng",
@@ -230,8 +235,6 @@ jvm_library(
         "//xml/relaxng",
         "//plugins/gradle/java",
         "//platform/remote-servers/impl",
-        "//plugins/javaFX/community",
-        "//plugins/javaFX/jps",
         "//java/manifest",
         "//plugins/yaml/backend",
         "//plugins/tasks/tasks-core:core",
@@ -304,7 +307,6 @@ jvm_library(
         "//plugins/maven/maven36-server-impl:server-m36-impl",
         "//plugins/maven/maven40-server-impl:server-m40",
         "//plugins/mcp-server:mcpserver",
-        "//python/pluginCore:community-plugin",
     ],
 )
 
@@ -377,7 +379,6 @@ jvm_library(
         "//platform/testFramework:testFramework_test_lib",
         "//plugins/ui-designer:java-guiForms-designer_test_lib",
         "//plugins/dev:dev-plugin-main_test_lib",
-        "//plugins/eclipse:eclipse_test_lib",
         "//plugins/git4idea/backend:backend_test_lib",
         "//plugins/git4idea/shared:shared_test_lib",
         "//plugins/git4idea/frontend:frontend_test_lib",
@@ -385,6 +386,7 @@ jvm_library(
         "//images:images_test_lib",
         "//plugins/junit:junit_test_lib",
         "//plugins/maven:maven_test_lib",
+        "//plugins/maven/plugin:plugin_test_lib",
         "//module-set-plugins/generated/intellij.moduleSet.plugin.main:moduleSet-plugin-main_test_lib",
         "//RegExpSupport:regexp_test_lib",
         "//plugins/testng:testng_test_lib",
@@ -398,8 +400,6 @@ jvm_library(
         "//xml/relaxng:relaxng_test_lib",
         "//plugins/gradle/java:java_test_lib",
         "//platform/remote-servers/impl:impl_test_lib",
-        "//plugins/javaFX/community:community_test_lib",
-        "//plugins/javaFX/jps:jps_test_lib",
         "//java/manifest:manifest_test_lib",
         "//plugins/yaml/backend:backend_test_lib",
         "//plugins/tasks/tasks-core:core_test_lib",
@@ -474,9 +474,6 @@ jvm_library(
         "//plugins/maven/maven36-server-impl:server-m36-impl_test_lib",
         "//plugins/maven/maven40-server-impl:server-m40_test_lib",
         "//plugins/mcp-server:mcpserver_test_lib",
-        "//python/python-process-output/common",
-        "//python/python-process-output/common:common_test_lib",
-        "//python/pluginCore:community-plugin_test_lib",
     ],
 )
 ### auto-generated section `build intellij.idea.community.main` end

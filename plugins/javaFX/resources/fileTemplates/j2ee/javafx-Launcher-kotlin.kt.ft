@@ -1,7 +1,0 @@
-package ${context.rootPackage}
-
-import javafx.application.Application
-
-fun main() {
-    Application.launch(HelloApplication::class.java)
-}

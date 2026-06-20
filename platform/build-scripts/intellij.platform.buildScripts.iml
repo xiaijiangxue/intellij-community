@@ -54,7 +54,6 @@
     <orderEntry type="module" module-name="intellij.libraries.fastutil" />
     <orderEntry type="module" module-name="intellij.libraries.gson" />
     <orderEntry type="module" module-name="intellij.libraries.protobuf" />
-    <orderEntry type="module" module-name="intellij.devkit.jps" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.java.guiForms.jps" scope="RUNTIME" />
     <orderEntry type="module" module-name="intellij.idea.community.build.tasks" />
     <orderEntry type="module" module-name="intellij.idea.community.build.dependencies" />

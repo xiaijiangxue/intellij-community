@@ -1,6 +1,0 @@
-class ThrowCallSiteReturn {
-    void test() {
-        throw new RuntimeException();
-    }
-
-}

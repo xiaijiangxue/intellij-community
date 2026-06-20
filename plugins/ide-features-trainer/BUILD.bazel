@@ -173,6 +173,7 @@ jvm_library(
     resource_strip_prefix = "testResources",
     resources = glob(
         ["testResources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     exports = ["@lib//:assertj-swing"],

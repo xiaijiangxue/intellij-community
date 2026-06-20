@@ -1,8 +1,0 @@
-public class InlineNullInForEach {
-
-    void test() {
-        for (int i : (int[]) null) {
-      System.out.println(i);
-    }
-  }
-}

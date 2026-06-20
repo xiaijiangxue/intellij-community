@@ -7,6 +7,7 @@ resourcegroup(
     name = "vcs-github_resources",
     srcs = glob(
         ["gen-resources/**/*"],
+        allow_empty = True,
     ),
     strip_prefix = "gen-resources",
 )
@@ -238,6 +239,7 @@ jvm_library(
     resource_strip_prefix = "test-resources",
     resources = glob(
         ["test-resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     runtime_deps = [

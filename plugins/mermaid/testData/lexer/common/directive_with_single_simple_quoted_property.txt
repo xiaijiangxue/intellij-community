@@ -1,3 +1,0 @@
-Directives.OPEN_DIRECTIVE ('%%')
-Directives.DIRECTIVE_TEXT ('{ some: "42" }')
-Directives.CLOSE_DIRECTIVE ('%%')
