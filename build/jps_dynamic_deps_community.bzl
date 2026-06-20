@@ -8,7 +8,7 @@ Parity with the JPS-to-Bazel converter is asserted in JpsModuleToBazelTargetsOnl
 
 load(":jps_library_derivation.bzl", "derive_library_targets")
 load(":jps_model.bzl", "read_project_model")
-load(":jps_target_derivation.bzl", "SKIPPED_MODULES", "compute_build_dir", "compute_iml_target", "compute_module_targets", "module_name_to_target", "parse_iml")
+load(":jps_target_derivation.bzl", "compute_build_dir", "compute_iml_target", "compute_module_targets", "is_skipped_module", "module_name_to_target", "parse_iml")
 
 def _format_target_list(name, targets):
     """Format a list of targets as a Starlark list assignment."""
@@ -68,7 +68,7 @@ def _derive_targets_from_model(ctx, model):
             all_iml.append(iml_target)
 
         # Skip modules that the converter also skips (standalone Bazel projects, Android-dependent)
-        if mod.module_name in SKIPPED_MODULES:
+        if is_skipped_module(mod.module_name):
             continue
 
         iml_data_list.append(struct(

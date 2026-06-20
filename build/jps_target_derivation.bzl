@@ -18,10 +18,21 @@ SKIPPED_MODULES = [
     "intellij.gradle.dependencyUpdater",
     "intellij.gradle.analysis",
     "intellij.gradle.java",
+    "intellij.gradle.java.coverage",
+    "intellij.gradle.java.performance",
+    "intellij.gradle.java.plugin",
+    "intellij.gradle.java.properties",
     "intellij.gradle.java.tests",
+    "intellij.gradle.java.toml",
+    "intellij.gradle.java.toml.tests",
     "intellij.gradle.tests.main",
     "intellij.platform.externalSystem.dependencyUpdater.tests",
 ]
+
+def is_skipped_module(module_name):
+    if module_name in SKIPPED_MODULES:
+        return True
+    return module_name.startswith("intellij.android.")
 
 # Custom modules with hardcoded Bazel packages and target names.
 # Mirrors DEFAULT_CUSTOM_MODULES in BazelBuildFileGenerator.kt.

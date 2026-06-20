@@ -420,7 +420,10 @@ internal class BazelBuildFileGenerator(
         continue
       }
 
-      if (module.name == "intellij.gradle.analysis" || module.name == "intellij.gradle.java") {
+      if (module.name == "intellij.gradle.analysis" || module.name == "intellij.gradle.java" ||
+          module.name == "intellij.gradle.java.coverage" || module.name == "intellij.gradle.java.performance" ||
+          module.name == "intellij.gradle.java.plugin" || module.name == "intellij.gradle.java.properties" ||
+          module.name == "intellij.gradle.java.toml" || module.name == "intellij.gradle.java.toml.tests") {
         // Depends on Android-only modules not available in Community Bazel build
         skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
