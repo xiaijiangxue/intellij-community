@@ -60,7 +60,7 @@ jobs:
         with:
           repository: JetBrains/android
           path: android
-          ref: ${{ github.event.inputs.branch || 'master' }}
+          ref: master
       - name: Build environment
         shell: bash
         run: docker build . --target intellij_idea --tag intellij_idea
