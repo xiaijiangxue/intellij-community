@@ -1,0 +1,12 @@
+name: Build Windows & Mac Installers
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/ide_build_and_upload.yml
+    with:
+      artifacts_dir: out/idea-ce/artifacts
+      product: intellij_idea
+      upload_artifacts: true
