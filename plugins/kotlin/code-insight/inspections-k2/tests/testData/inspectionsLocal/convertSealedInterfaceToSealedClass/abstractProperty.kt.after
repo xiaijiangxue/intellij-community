@@ -1,5 +1,0 @@
-// FIX: Convert to sealed class
-sealed class Result {
-    abstract val value: String
-}
-class Success(override val value: String) : Result()

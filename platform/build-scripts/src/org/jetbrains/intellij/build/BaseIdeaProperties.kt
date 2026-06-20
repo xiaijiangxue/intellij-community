@@ -4,7 +4,6 @@ package org.jetbrains.intellij.build
 import kotlinx.collections.immutable.PersistentList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.plus
-import org.jetbrains.intellij.build.kotlin.KotlinPluginBuilder
 import org.jetbrains.intellij.build.productLayout.DEFAULT_BUNDLED_PLUGINS
 
 /**
@@ -25,38 +24,20 @@ val IDEA_BUNDLED_PLUGINS: PersistentList<String> = DEFAULT_BUNDLED_PLUGINS + per
   "intellij.html.tools",
   "intellij.repository.search",
   "intellij.maven.plugin",
-  "intellij.gradle.plugin",
-  "intellij.android.gradle.declarative.lang.ide",
-  "intellij.android.gradle.dsl",
-  "intellij.gradle.java.plugin",
   "intellij.vcs.git",
   "intellij.vcs.git.commit.modal",
   "intellij.vcs.github",
   "intellij.vcs.gitlab",
-  "intellij.groovy.scripting",
-  "intellij.groovy",
-  "intellij.groovy.live.templates",
   "intellij.junit",
   "intellij.testng",
   "intellij.java.i18n",
   "intellij.java.byteCodeViewer",
   "intellij.java.coverage",
   "intellij.java.decompiler",
-  "intellij.eclipse",
   "intellij.sh.plugin",
   "intellij.markdown",
-  "intellij.mermaid",
-  "intellij.mcpserver",
   "intellij.webp",
-  "intellij.grazie",
-  "intellij.featuresTrainer",
   "intellij.toml",
-  KotlinPluginBuilder.MAIN_KOTLIN_PLUGIN_MODULE,
-  "intellij.keymap.eclipse",
-  "intellij.keymap.visualStudio",
-  "intellij.keymap.netbeans",
-  "intellij.performanceTesting",
-  "intellij.compose.ide.plugin",
 )
 
 val CE_CLASS_VERSIONS: Map<String, String> = mapOf(
@@ -70,16 +51,12 @@ val CE_CLASS_VERSIONS: Map<String, String> = mapOf(
   "plugins/java-coverage/lib/java-coverage-rt.jar" to "1.8",
   "plugins/junit/lib/junit-rt.jar" to "1.8",
   "plugins/junit/lib/junit5-rt.jar" to "1.8",
-  "plugins/gradle-plugin/lib/gradle-tooling-extension-api.jar" to "1.8",
-  "plugins/gradle-plugin/lib/gradle-tooling-extension-impl.jar" to "1.8",
   "plugins/maven-plugin/lib/maven-server.jar" to "1.8",
   "plugins/maven-plugin/lib/intellij.maven.server3/maven3-server-common.jar" to "1.8",
   "plugins/maven-plugin/lib/intellij.maven.server3/maven3-server.jar" to "1.8",
   "plugins/maven-plugin/lib/artifact-resolver-m31.jar" to "1.8",
   "plugins/java/lib/sa-jdwp" to "",  // ignored
   "plugins/java/lib/rt/debugger-agent.jar" to "1.7",
-  "plugins/Groovy/lib/groovy-rt.jar" to "1.8",
-  "plugins/Groovy/lib/groovy-constants-rt.jar" to "1.8",
 )
 
 fun configurePropertiesForAllEditionsOfIntelliJIdea(properties: JetBrainsProductProperties) {

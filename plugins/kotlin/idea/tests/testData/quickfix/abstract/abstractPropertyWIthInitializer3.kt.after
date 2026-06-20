@@ -1,8 +1,0 @@
-// "Remove initializer from property" "true"
-// K2_ERROR: Property with initializer cannot be abstract.
-abstract class A {
-    abstract var i: Int<caret>
-}
-
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.RemovePartsFromPropertyFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.k2.codeinsight.fixes.RemovePartsFromPropertyFixFactory$RemovePartsFromPropertyFix

@@ -1,7 +1,0 @@
-fun foo(list: List<Int>) {
-    for (item in <selection><caret>items</selection>) {
-        list.forEach { item ->
-            println(item)
-        }
-    }
-}

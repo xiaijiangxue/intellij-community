@@ -1,8 +1,0 @@
-// "Create class 'Foo'" "true"
-// K2_ERROR: Unresolved reference 'Foo' on receiver of type 'A<T (of class A<T>)>'.
-
-class A<T>(val n: T) {
-    fun test() = this.<caret>Foo(2, "2")
-}
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.createFromUsage.createClass.CreateClassFromUsageFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.k2.codeinsight.quickFixes.createFromUsage.CreateKotlinClassAction

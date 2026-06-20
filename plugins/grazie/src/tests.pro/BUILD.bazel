@@ -28,7 +28,6 @@ jvm_library(
         "@lib//:ai-grazie-semantic-engine",
         "//libraries/gson",
         "//python/pluginCore:community-plugin",
-        "//plugins/kotlin:kotlin-plugin-community-main",
         "//plugins/grazie",
         "//plugins/grazie/src:core",
         "@lib//:grazie-tests-pro-ai-grazie-model-ner-jvm",
@@ -63,7 +62,6 @@ jvm_library(
         # do not sort,
         ":tests.pro",
         "//python/pluginCore:community-plugin_test_lib",
-        "//plugins/kotlin:kotlin-plugin-community-main_test_lib",
         "//platform/ide-core:ide-core_test_lib",
     ],
     deps = [

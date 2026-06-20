@@ -1,2 +1,0 @@
-class J extends C {
-}

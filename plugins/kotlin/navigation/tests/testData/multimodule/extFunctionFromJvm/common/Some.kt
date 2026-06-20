@@ -1,1 +1,0 @@
-fun f(t: Throwable): String = t.stackTraceToString()

@@ -1,5 +1,0 @@
-// COMPILER_ARGUMENTS: -Xexplicit-backing-fields
-class MyClass<out T>
-
-val y: MyClass<Any>
-    field<caret> = MyClass<String>()

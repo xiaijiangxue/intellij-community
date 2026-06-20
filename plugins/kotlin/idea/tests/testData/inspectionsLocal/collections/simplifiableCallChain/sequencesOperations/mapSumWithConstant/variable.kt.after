@@ -1,4 +1,0 @@
-// WITH_STDLIB
-fun test(sequence: Sequence<Int>, i: Int) {
-    sequence.sumOf { i }
-}

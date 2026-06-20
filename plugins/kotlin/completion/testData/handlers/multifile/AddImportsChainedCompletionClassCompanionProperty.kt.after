@@ -1,7 +1,0 @@
-package first
-
-import second.SomeClass
-
-fun test() {
-    SomeClass.someCompanionProperty
-}

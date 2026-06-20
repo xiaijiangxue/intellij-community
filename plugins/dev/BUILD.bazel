@@ -62,8 +62,6 @@ jvm_library(
         # do not sort,
         "//plugins/dev:dev-noJava-plugin-main",
         "//plugins/dev/intellij.java.dev:java-dev",
-        "//plugins/dev/intellij.groovy.dev:groovy-dev",
-        "//plugins/dev/intellij.kotlin.dev:kotlin-dev",
     ],
 )
 
@@ -81,8 +79,6 @@ jvm_library(
         ":dev-plugin-main",
         "//plugins/dev:dev-noJava-plugin-main_test_lib",
         "//plugins/dev/intellij.java.dev:java-dev_test_lib",
-        "//plugins/dev/intellij.groovy.dev:groovy-dev_test_lib",
-        "//plugins/dev/intellij.kotlin.dev:kotlin-dev_test_lib",
     ],
 )
 ### auto-generated section `build intellij.dev.plugin.main` end

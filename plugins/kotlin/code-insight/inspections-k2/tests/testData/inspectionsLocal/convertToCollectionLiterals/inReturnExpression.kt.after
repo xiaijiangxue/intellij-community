@@ -1,4 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-fun test(): List<String>  {
-    return ["a", "b", "c"]
-}

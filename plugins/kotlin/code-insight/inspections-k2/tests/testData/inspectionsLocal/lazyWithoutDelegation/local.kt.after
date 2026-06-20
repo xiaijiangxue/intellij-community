@@ -1,6 +1,0 @@
-class A {
-    fun test() {
-        val x by lazy { "hello" }
-        println(x)
-    }
-}

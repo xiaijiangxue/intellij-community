@@ -1,8 +1,0 @@
-// "Specify 'String' return type for enclosing function 'm'" "true"
-// K2_ERROR: Returns are prohibited in functions with expression body and without explicit return type. Use block body '{...}' or add an explicit return type.
-fun foo(s: String): String = s
-
-fun m(a: String?) = foo(a ?: ret<caret>urn "" )
-
-
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.k2.codeinsight.fixes.ChangeTypeQuickFixFactories$UpdateTypeQuickFix

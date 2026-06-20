@@ -1,3 +1,0 @@
-// PRIORITY: LOW
-val foo: Int
-    get() = 1

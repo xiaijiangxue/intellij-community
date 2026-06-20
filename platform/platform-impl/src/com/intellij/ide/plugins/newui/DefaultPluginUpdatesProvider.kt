@@ -64,12 +64,17 @@ class DefaultPluginUpdatesProvider(private val coroutineScope: CoroutineScope) :
       .debounce(300.milliseconds)
       .collectLatest {
         updateMutex.withLock {
-          val model = (PluginUpdateHandler.getInstance().loadAndStorePluginUpdates(null))
-          val pluginUpdates = PluginUpdatesEvent(model.pluginUpdates.markLocal(),
-                                                 model.disabledPluginUpdates.markLocal(),
-                                                 model.updatesFromCustomRepositories.markLocal())
-          lastPluginUpdates = pluginUpdates
-          emitUpdates(pluginUpdates)
+          try {
+            val model = (PluginUpdateHandler.getInstance().loadAndStorePluginUpdates(null))
+            val pluginUpdates = PluginUpdatesEvent(model.pluginUpdates.markLocal(),
+                                                   model.disabledPluginUpdates.markLocal(),
+                                                   model.updatesFromCustomRepositories.markLocal())
+            lastPluginUpdates = pluginUpdates
+            emitUpdates(pluginUpdates)
+          }
+          catch (_: RuntimeException) {
+            // PluginUpdateHandlerProvider not available (e.g. slim CE build without update-checker backend)
+          }
         }
       }
   }

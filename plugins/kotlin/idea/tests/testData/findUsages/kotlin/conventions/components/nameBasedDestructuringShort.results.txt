@@ -1,2 +1,0 @@
-Value read 10 println(a)
-Value read 9 (val a, val b) = u

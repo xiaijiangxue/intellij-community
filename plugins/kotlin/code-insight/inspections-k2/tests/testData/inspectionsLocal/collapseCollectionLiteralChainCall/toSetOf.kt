@@ -1,5 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-// FIX: Replace with a function call and remove type conversion
-fun test(): Set<String> {
-    return ["a", "b"].t<caret>oSet()
-}

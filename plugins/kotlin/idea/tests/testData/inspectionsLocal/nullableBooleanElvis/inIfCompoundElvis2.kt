@@ -1,9 +1,0 @@
-// HIGHLIGHT: INFORMATION
-
-fun foo() {
-    var a: Boolean? = null
-    var b: Boolean? = null
-    if (a ?: b <caret>?: false) {
-
-    }
-}

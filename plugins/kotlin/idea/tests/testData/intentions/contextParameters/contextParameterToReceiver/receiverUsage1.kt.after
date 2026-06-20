@@ -1,8 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcontext-parameters
-
-fun String.foo() {
-}
-
-fun String.bar() {
-    this@bar.foo()
-}

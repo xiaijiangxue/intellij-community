@@ -1,7 +1,0 @@
-// WITH_STDLIB
-
-
-fun foo() {
-    "s".take(10).
-        substringAfterLast(',')
-}

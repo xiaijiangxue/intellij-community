@@ -1,3 +1,0 @@
-fun interface Sam : Base
-
-var x: Sam = Sam { <caret> }

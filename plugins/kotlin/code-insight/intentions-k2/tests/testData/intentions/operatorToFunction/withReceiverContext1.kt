@@ -1,5 +1,0 @@
-fun String.p(
-    block: String.() -> Unit,
-) {
-    block<caret>()
-}

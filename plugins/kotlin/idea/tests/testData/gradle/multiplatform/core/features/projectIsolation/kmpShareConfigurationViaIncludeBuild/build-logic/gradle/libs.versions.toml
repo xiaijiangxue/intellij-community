@@ -1,5 +1,0 @@
-[versions]
-kotlin = "{{kgp_version}}"
-
-[libraries]
-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }

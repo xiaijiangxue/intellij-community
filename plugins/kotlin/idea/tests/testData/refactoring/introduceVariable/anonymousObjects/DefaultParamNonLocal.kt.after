@@ -1,5 +1,0 @@
-
-interface A
-
-val a1 = object : A {}
-fun foo(a: A = a1) {}

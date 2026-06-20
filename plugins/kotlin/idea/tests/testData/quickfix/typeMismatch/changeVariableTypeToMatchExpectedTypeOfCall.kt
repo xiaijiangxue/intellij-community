@@ -1,6 +1,0 @@
-// "Change type of 'bar' to 'String'" "true"
-// K2_ERROR: Return type mismatch: expected 'String', actual 'Any'.
-val bar: Any = ""
-fun foo(): String = bar<caret>
-
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.k2.codeinsight.fixes.ChangeTypeQuickFixFactories$UpdateTypeQuickFix

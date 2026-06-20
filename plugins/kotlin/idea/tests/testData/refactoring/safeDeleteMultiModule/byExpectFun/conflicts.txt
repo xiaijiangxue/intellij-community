@@ -1,3 +1,0 @@
-Usage of function test.foo(Int) that is not safe to delete.
-Usage of function test.foo(Int) that is not safe to delete.
-Usage of function test.foo(Int) that is not safe to delete.

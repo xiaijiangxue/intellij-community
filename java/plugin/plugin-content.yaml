@@ -162,9 +162,6 @@
 - name: lib/modules/intellij.java.execution.jar
   contentModules:
   - name: intellij.java.execution
-- name: lib/modules/intellij.java.featuresTrainer.jar
-  contentModules:
-  - name: intellij.java.featuresTrainer
 - name: lib/modules/intellij.java.frontend.jar
   contentModules:
   - name: intellij.java.frontend

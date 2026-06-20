@@ -104,8 +104,6 @@ jvm_library(
         "//java/openapi:java",
         "//java/openapi:java_test_lib",
         "@lib//:kotlin-stdlib",
-        "//plugins/groovy/groovy-psi:psi",
-        "//plugins/groovy/groovy-psi:psi_test_lib",
         "//plugins/gradle",
         "//plugins/gradle:gradle_test_lib",
         "//platform/external-system-impl:externalSystem-tests",

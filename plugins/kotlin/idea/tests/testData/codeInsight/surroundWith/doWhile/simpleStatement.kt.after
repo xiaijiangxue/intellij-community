@@ -1,5 +1,0 @@
-fun foo() {
-    do {
-        println("hello")
-    } while (<selection><caret>true</selection>)
-}

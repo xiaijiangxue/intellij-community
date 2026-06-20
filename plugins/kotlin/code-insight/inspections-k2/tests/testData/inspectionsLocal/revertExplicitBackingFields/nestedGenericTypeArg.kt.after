@@ -1,5 +1,0 @@
-// COMPILER_ARGUMENTS: -Xexplicit-backing-fields
-
-private val _matrix = mutableListOf<List<Int>>()
-val matrix: List<List<Int>>
-    get() = _matrix

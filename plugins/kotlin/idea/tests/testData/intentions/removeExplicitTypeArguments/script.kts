@@ -1,2 +1,0 @@
-listOf<<caret>String>("hello")
-

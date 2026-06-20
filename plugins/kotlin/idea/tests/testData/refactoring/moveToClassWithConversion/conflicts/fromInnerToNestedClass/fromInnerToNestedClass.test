@@ -1,7 +1,0 @@
-{
-  "mainFile": "sample/Source.kt",
-  "enabledInK2": true,
-  "targetClassFqName": "sample.Source.Nested",
-  "candidateKind": "VALUE_PARAMETER",
-  "candidateDisplayName": "param"
-}

@@ -1,2 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-val s: Set<Number> = [1, 2, 4.0]

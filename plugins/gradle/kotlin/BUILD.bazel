@@ -32,8 +32,6 @@ jvm_library(
         "//platform/bootstrap/coroutine:coroutine_test_lib",
         "//platform/testFramework",
         "//platform/testFramework:testFramework_test_lib",
-        "//plugins/gradle/completion/kotlin/tests",
-        "//plugins/gradle/completion/kotlin/tests:tests_test_lib",
     ],
 )
 ### auto-generated section `build intellij.gradle.kotlin.tests.main` end

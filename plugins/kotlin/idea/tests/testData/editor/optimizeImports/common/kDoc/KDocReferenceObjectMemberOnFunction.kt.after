@@ -1,9 +1,0 @@
-
-package pack
-
-object MyObject {
-    /**
-     * [objectFunction]
-     */
-    fun objectFunction() {}
-}

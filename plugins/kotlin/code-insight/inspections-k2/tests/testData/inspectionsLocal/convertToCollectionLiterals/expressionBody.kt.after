@@ -1,2 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-fun getItems(): MutableList<String> = ["a", "b", "c"]

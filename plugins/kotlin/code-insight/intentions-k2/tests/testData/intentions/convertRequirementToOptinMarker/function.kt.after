@@ -1,5 +1,0 @@
-@RequiresOptIn()
-annotation class ReqOptinAnnotation
-
-@OptIn(ReqOptinAnnotation::class)
-fun f() {}

@@ -1,7 +1,0 @@
-// FIX: Replace with 'firstOrNull()'
-// WITH_STDLIB
-
-fun test(): String? {
-    val xs = arrayOf("a", "b")
-    return xs.firstOrNull()
-}

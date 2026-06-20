@@ -1,8 +1,0 @@
-// WITH_STDLIB
-// FIX: Convert to 'run'
-
-class C {
-    val c = "abc".<caret>run {
-        println("$this")
-    }
-}

@@ -1,7 +1,0 @@
-[import] [ ] [kotlinx] [.] [serialization] [.] [*] []
-[]
-[] [class] [ ] [A] [ ] [{] []
-[    ] [companion] [ ] [object] [ ] [{] []
-[        ] [fun] [ ] [serializer] [(] [)] [:] [ ] [KSerializer]{T(kotlinx.serialization.KSerializer) [<] [A]{T(A) [>] []
-[    ] [}] []
-[] [}]

@@ -1,8 +1,0 @@
-// "Add 'inline' modifier" "true"
-// K2_ERROR: Only type parameters of inline functions can be reified.
-
-fun <<caret>reified T> fn() {
-
-}
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddModifierFixMpp
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddModifierFixMpp

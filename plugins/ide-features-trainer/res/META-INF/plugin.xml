@@ -22,7 +22,6 @@
   <content namespace="jetbrains">
     <module name="intellij.vcs.git.featuresTrainer"/>
     <module name="intellij.featuresTrainer.onboarding"/>
-    <module name="intellij.kotlin.onboarding.promoter"/>
   </content>
   <content>
     <module name="intellij.libraries.assertj.core" loading="embedded"/>

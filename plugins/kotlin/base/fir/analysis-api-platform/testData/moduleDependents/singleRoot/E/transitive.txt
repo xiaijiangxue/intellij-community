@@ -1,5 +1,0 @@
-A (production)
-A (test)
-B (production)
-B (test)
-E (test)

@@ -85,12 +85,6 @@ suspend fun buildCommunityStandaloneJpsBuilder(
   layout.withModule("intellij.java.rt", "idea_rt.jar")
   layout.withModule("intellij.platform.jps.build.javac.rt", "jps-builders-6.jar")
 
-  // layout of groovy jars must be consistent with GroovyBuilder.getGroovyRtRoots method
-  layout.withModule("intellij.libraries.groovy", "groovy.jar")
-  layout.withModule("intellij.groovy.jps", "groovy-jps.jar")
-  layout.withModule("intellij.groovy.rt", "groovy-rt.jar")
-  layout.withModule("intellij.groovy.rt.classLoader", "groovy-rt-class-loader.jar")
-  layout.withModule("intellij.groovy.constants.rt", "groovy-constants-rt.jar")
   layout.withModule("intellij.java.guiForms.jps", "java-guiForms-jps.jar")
 
   layout.withModule("intellij.maven.jps", "maven-jps.jar")

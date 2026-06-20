@@ -1,5 +1,0 @@
-// COMPILER_ARGUMENTS: -Xmulti-dollar-interpolation
-
-fun foo() {
-    """hello ${'$'}{url} <caret>${'$'}"""
-}

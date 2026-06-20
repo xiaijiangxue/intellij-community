@@ -1,3 +1,0 @@
-<node text="JvmOnlyChild ()" base="true">
-  <node text="JvmOnlySecondChild ()"/>
-</node>

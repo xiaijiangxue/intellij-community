@@ -17,7 +17,6 @@ jvm_library(
     deps = [
         # do not sort,
         "@lib//:kotlin-stdlib",
-        "//plugins/groovy/rt/classLoader",
         "//platform/util-class-loader:util-classLoader",
         "//platform/util",
         "@lib//:jetbrains-annotations",
@@ -41,7 +40,6 @@ jvm_library(
     runtime_deps = [
         # do not sort,
         ":api",
-        "//plugins/groovy/rt/classLoader:classLoader_test_lib",
         "//platform/util-class-loader:util-classLoader_test_lib",
         "//platform/util:util_test_lib",
         "//platform/build-scripts/downloader:downloader_test_lib",

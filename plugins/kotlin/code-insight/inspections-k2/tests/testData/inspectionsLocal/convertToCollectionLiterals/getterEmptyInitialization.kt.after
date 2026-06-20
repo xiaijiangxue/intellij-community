@@ -1,6 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-class A {
-
-    val x: List<Int> get() = []
-
-}

@@ -129,7 +129,6 @@ abstract class KotlinPluginBuilder(val kind : KotlinPluginKind = System.getPrope
       "intellij.kotlin.i18n",
       "intellij.kotlin.migration",
       "kotlin.inspections",
-      "intellij.kotlin.featuresTrainer",
       "intellij.kotlin.analysis.platform",
       "intellij.kotlin.codeInsight.base",
       "intellij.kotlin.projectStructure",
@@ -377,5 +376,3 @@ private fun withKotlincInPluginDirectory(libName: String = "kotlin-dist", target
     Decompressor.Zip(jars[0]).extract(targetDir.resolve(target))
   }
 }
-
-object CommunityKotlinPluginBuilder : KotlinPluginBuilder()

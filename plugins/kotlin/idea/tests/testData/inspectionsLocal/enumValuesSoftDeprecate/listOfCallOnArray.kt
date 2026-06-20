@@ -1,5 +1,0 @@
-// API_VERSION: 1.9
-// WITH_STDLIB
-enum class EnumClass
-
-val a: List<Array<EnumClass>> = listOf(EnumClass.values<caret>())

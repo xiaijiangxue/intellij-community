@@ -1,8 +1,0 @@
-// "Remove supertype" "true"
-// K2_ERROR: Only one class can appear in a supertype list.
-open class C1 {}
-open class C2 {}
-class C3: C1(), C2<caret>() {}
-
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.RemoveSupertypeFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.RemoveSupertypeFix

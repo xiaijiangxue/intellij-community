@@ -1,7 +1,0 @@
-// "Add '@UnsafeVariance' annotation" "true"
-// K2_ERROR: Type parameter 'E' is declared as 'out' but occurs in 'in' position in type 'E (of interface Foo<out E>)'.
-interface Foo<out E> {
-    fun bar(e: E<caret>)
-}
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddAnnotationFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddAnnotationFix

@@ -1,5 +1,0 @@
-fun foo() {
-    for (item in <selection><caret>items</selection>) {
-        println("hello")
-    }
-}

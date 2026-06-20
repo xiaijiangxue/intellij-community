@@ -1,7 +1,0 @@
-// WITH_STDLIB
-// FIX: Replace with '.javaClass' call
-package test
-
-fun Any.usage() {
-    ::javaClass<caret>
-}

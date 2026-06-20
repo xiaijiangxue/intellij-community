@@ -1,3 +1,0 @@
-B (production)
-B (test)
-E (test)

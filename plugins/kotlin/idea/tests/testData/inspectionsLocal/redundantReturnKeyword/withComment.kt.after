@@ -1,8 +1,0 @@
-fun f(b: Boolean): Int {
-    return if (b) {
-        println("pre")
-        /* value: */ 42
-    } else -1
-}
-
-

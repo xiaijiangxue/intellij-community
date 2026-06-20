@@ -1,9 +1,0 @@
-// AFTER-WARNING: Variable 'aaa' is never used
-
-fun interface A {
-    fun m()
-}
-
-fun foo() {
-    val aaa: A = A {<caret> }
-}

@@ -1,7 +1,0 @@
-
-fun test(): Throwable {
-    return Throwable<caret>
-}
-
-// ELEMENT: Throwable
-// TAIL_TEXT: " (kotlin)"

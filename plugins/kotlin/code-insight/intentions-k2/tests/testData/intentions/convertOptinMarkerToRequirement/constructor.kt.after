@@ -1,5 +1,0 @@
-@RequiresOptIn
-annotation class ReqOptinAnnotation
-
-class A @ReqOptinAnnotation constructor() {
-}

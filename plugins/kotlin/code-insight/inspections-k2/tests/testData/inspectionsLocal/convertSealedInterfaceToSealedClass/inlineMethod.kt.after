@@ -1,5 +1,0 @@
-// FIX: Convert to sealed class
-sealed class Result {
-    private inline fun <reified T> cast(value: Any): T = value as T
-}
-class Success : Result()

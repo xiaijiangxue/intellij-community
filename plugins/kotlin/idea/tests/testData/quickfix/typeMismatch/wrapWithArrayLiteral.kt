@@ -1,9 +1,0 @@
-// "Wrap with []" "true"
-// K2_ERROR: Argument type mismatch: actual type is 'String', but 'Array<String>' was expected.
-
-annotation class Foo(val value: Array<String>)
-
-@Foo(value = "abc"<caret>)
-class Bar
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.WrapWithArrayLiteralFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.WrapWithArrayLiteralFix

@@ -1,5 +1,0 @@
-// API_VERSION: 1.9
-// WITH_STDLIB
-fun foo() {
-    AnnotationTarget.values<caret>()
-}

@@ -142,8 +142,6 @@ jvm_library(
         "//platform/structure-view-impl/plugin:plugin_test_lib",
         "//platform/todo/plugin",
         "//platform/todo/plugin:plugin_test_lib",
-        "//plugins/groovy/structuralsearch-groovy:structuralSearch",
-        "//plugins/groovy/structuralsearch-groovy:structuralSearch_test_lib",
         "//platform/lang-impl",
         "//platform/lang-impl:lang-impl_test_lib",
         "//platform/testFramework",

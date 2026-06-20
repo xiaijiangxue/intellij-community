@@ -397,6 +397,24 @@ internal class BazelBuildFileGenerator(
         continue
       }
 
+      if (module.name == "intellij.gradle.declarativeSync" || module.name == "intellij.gradle.declarativeSync.tests") {
+        // Gradle declarative sync modules are not yet supported in Bazel
+        skippedModules.add(descriptor)
+        continue
+      }
+
+      if (module.name == "intellij.gradle.dependencyUpdater") {
+        // Depends on Android-only modules not available in Community Bazel build
+        skippedModules.add(descriptor)
+        continue
+      }
+
+      if (module.name == "intellij.gradle.analysis" || module.name == "intellij.gradle.java") {
+        // Depends on Android-only modules not available in Community Bazel build
+        skippedModules.add(descriptor)
+        continue
+      }
+
       if (descriptor.isCommunity) {
         community.add(descriptor)
       }

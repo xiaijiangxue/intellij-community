@@ -1,5 +1,0 @@
-fun foo(i: Int) {
-    <caret>// always true
-    val b = 42
-    return
-}

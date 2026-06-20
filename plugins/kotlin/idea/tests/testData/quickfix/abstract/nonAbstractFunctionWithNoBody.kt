@@ -1,8 +1,0 @@
-// "Add function body" "true"
-// K2_ERROR: Function 'foo' without a body must be abstract.
-class A() {
-    fun <caret>foo()
-}
-
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddFunctionBodyFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddFunctionBodyFix

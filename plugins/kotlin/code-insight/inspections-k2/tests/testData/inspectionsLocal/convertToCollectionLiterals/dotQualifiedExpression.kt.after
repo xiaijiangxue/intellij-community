@@ -1,2 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-val contains = ["1", "2", "3"].contains("1")

@@ -1,9 +1,0 @@
-import kotlin.enums.enumEntries
-
-enum class MyEnum {
-    A, B, C
-}
-
-fun findA() {
-    val a : MyEnum? = enumEntries<MyEnum>().firstOrNull { it == MyEnum.A }
-}

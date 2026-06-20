@@ -1,4 +1,0 @@
-Crumbs:
-  plugins{…}
-Tooltips:
-  lambda <b><code>plugins{}</code></b>

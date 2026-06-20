@@ -1,8 +1,0 @@
-// "Remove 'external' modifier" "true"
-// K2_ERROR: Modifier 'external' is not applicable to 'property'.
-
-class B {
-    <caret>external val foo: Int = 23
-}
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.RemoveModifierFixBase
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.RemoveModifierFixBase

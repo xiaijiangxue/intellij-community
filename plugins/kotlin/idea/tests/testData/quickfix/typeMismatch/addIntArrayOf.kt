@@ -1,9 +1,0 @@
-// "Add intArrayOf wrapper" "true"
-// K2_ERROR: Argument type mismatch: actual type is 'Int', but 'IntArray' was expected.
-
-annotation class ArrAnn(val value: IntArray)
-
-@ArrAnn(<caret>42) class My
-
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddArrayOfTypeFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddArrayOfTypeFix

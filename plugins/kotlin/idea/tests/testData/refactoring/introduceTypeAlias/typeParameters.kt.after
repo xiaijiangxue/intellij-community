@@ -1,8 +1,0 @@
-// NAME: NMap
-
-typealias NMap<T> = Map<T, String?>
-
-// SIBLING:
-class ClassName<T> {
-    fun method(): List<NMap<T>> = listOf()
-}
