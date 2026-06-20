@@ -1,7 +1,0 @@
-class InlineMethodExample {
-
-    public void testInline() {
-    String message = "Hello, world!";
-        System.out.println("The message is: " + message);
-    }
-}

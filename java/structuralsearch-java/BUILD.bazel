@@ -17,6 +17,7 @@ jvm_library(
     resource_strip_prefix = "resources",
     resources = glob(
         ["resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     deps = [
@@ -142,8 +143,6 @@ jvm_library(
         "//platform/structure-view-impl/plugin:plugin_test_lib",
         "//platform/todo/plugin",
         "//platform/todo/plugin:plugin_test_lib",
-        "//plugins/groovy/structuralsearch-groovy:structuralSearch",
-        "//plugins/groovy/structuralsearch-groovy:structuralSearch_test_lib",
         "//platform/lang-impl",
         "//platform/lang-impl:lang-impl_test_lib",
         "//platform/testFramework",

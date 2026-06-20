@@ -1,9 +1,0 @@
-// WITH_STDLIB
-fun foo() {
-    loop@ for (i in 0..<5) {
-        for (c in "abc") {
-            if (c == 'a') continue
-            if (c == 'b') continue@loop
-        }
-    }
-}

@@ -1,2 +1,0 @@
-Usages of outer class instance inside declaration 'foo' won't be processed
-Usages of outer class instance inside declaration 'foo' won't be processed

@@ -1,1 +1,0 @@
-data class Secret(private val password: String)

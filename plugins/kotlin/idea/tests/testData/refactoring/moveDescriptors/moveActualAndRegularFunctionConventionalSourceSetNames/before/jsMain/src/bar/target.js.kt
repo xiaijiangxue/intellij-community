@@ -1,4 +1,0 @@
-package bar
-
-fun existingInTargetPackageJs() {
-}

@@ -1,9 +1,0 @@
-// COMPILER_ARGUMENTS: -Xexplicit-backing-fields
-interface Base {
-    val names: List<String>
-}
-
-abstract class AbstractBase : Base {
-    final override val names: List<String>
-        field<caret> = mutableListOf<String>()
-}

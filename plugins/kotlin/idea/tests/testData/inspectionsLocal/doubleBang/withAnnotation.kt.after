@@ -1,8 +1,0 @@
-// FIX: "Replace with '?: error(…)'"
-@Target(AnnotationTarget.EXPRESSION)
-@Retention(AnnotationRetention.SOURCE)
-annotation class Ann
-
-fun foo(arg: String?) {
-    (@Ann arg) ?: error("'(@Ann arg)' must not be null")
-}

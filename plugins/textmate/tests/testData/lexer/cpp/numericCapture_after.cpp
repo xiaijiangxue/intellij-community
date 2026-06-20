@@ -1,1 +1,0 @@
-source.cpp;constant.numeric.decimal.cpp: [0, 1], {1}

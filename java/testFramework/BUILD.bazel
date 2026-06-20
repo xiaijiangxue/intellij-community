@@ -27,6 +27,7 @@ jvm_library(
     resource_strip_prefix = "resources",
     resources = glob(
         ["resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     exports = [

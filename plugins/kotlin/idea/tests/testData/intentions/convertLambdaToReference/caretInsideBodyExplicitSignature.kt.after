@@ -1,4 +1,0 @@
-// IS_APPLICABLE: true
-
-val x = Int::toString
-

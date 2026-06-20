@@ -1,6 +1,0 @@
-MODULES
-project
-
-project.main
-
-project.test

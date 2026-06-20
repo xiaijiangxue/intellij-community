@@ -1,4 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-fun test(x: Int, y: Int): Array<Int?> {
-    return [x, y, null]
-}

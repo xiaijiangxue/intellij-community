@@ -1,3 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-
-val emp: List<Int> = []

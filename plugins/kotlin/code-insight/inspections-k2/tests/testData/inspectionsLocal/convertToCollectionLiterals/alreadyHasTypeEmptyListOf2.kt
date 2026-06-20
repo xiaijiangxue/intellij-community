@@ -1,2 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-fun coll(): Collection<Any> = emptyList<caret>()

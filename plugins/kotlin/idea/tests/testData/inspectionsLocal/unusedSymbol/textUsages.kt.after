@@ -1,7 +1,0 @@
-class ABC {
-    // use foo sometimes
-}
-
-fun main() {
-    ABC()
-}

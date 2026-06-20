@@ -1,1 +1,0 @@
-<error descr="The name of a compact source file is not a valid identifier">void main() {}</error>

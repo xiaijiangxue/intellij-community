@@ -1,1 +1,0 @@
-private fun fo<caret>o() = listOf(1).toCollection(HashSet())

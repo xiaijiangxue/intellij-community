@@ -1,3 +1,0 @@
-Directives.OPEN_DIRECTIVE ('%%')
-Directives.DIRECTIVE_TEXT ('{}')
-Directives.CLOSE_DIRECTIVE ('%%')

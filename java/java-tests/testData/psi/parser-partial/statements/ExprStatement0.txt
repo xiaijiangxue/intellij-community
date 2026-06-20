@@ -1,5 +1,0 @@
-PsiJavaFile:ExprStatement0.java
-  PsiDeclarationStatement
-    PsiKeyword:var('var')
-    PsiErrorElement:Identifier expected
-      <empty list>

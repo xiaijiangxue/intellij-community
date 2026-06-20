@@ -69,7 +69,7 @@ maven.install(
     fetch_sources = True,
     lock_file = "//:maven_install.json",
     repositories = [
-        "https://cache-redirector.jetbrains.com/repo1.maven.org/maven2",
+        "https://maven.aliyun.com/repository/central",
         "https://cache-redirector.jetbrains.com/intellij-dependencies",
         "https://cache-redirector.jetbrains.com/download.jetbrains.com/teamcity-repository",
         "https://cache-redirector.jetbrains.com/www.jetbrains.com/intellij-repository/releases",

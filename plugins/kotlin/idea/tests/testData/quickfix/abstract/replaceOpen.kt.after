@@ -1,8 +1,0 @@
-// "Make 'foo' 'abstract'" "true"
-// K2_ERROR: Function 'foo' without a body must be abstract.
-abstract class B() {
-    abstract fun <caret>foo()
-}
-
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddModifierFixMpp
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddModifierFixMpp

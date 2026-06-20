@@ -1,4 +1,0 @@
-class A {
-    var x: Int = 1<caret>
-        get() = 42
-}

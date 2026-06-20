@@ -1,3 +1,0 @@
-fun foo(<caret>string: String, a: String) {
-    foo(string, "")
-}

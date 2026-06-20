@@ -41,6 +41,7 @@ jvm_library(
     resource_strip_prefix = "src/test/resources",
     resources = glob(
         ["src/test/resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     runtime_deps = [":ui-tests"],

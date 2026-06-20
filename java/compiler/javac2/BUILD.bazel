@@ -17,6 +17,7 @@ jvm_library(
     resource_strip_prefix = "resources",
     resources = glob(
         ["resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     runtime_deps = ["//java/compiler/instrumentation-util-8:java-compiler-instrumentationUtil-java8"],

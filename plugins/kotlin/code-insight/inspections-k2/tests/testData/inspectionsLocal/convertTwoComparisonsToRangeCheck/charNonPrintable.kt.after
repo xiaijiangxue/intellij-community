@@ -1,2 +1,0 @@
-fun foo(bar: Char) = bar in '\n'..<'\ufeff'
-

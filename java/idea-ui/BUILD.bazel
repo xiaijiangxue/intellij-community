@@ -248,8 +248,6 @@ jvm_library(
         "//platform/lang-api:lang_test_lib",
         "//platform/projectModel-api:projectModel",
         "//platform/projectModel-api:projectModel_test_lib",
-        "//platform/platform-tests:tests",
-        "//platform/platform-tests:tests_test_lib",
         "//platform/core-ui",
         "//platform/core-ui:core-ui_test_lib",
         "//platform/core-impl",

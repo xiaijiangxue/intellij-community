@@ -1,6 +1,0 @@
-// COMPILER_ARGUMENTS: -Xname-based-destructuring=only-syntax
-// WITH_STDLIB
-
-fun test() {
-    mapOf(1 to "one").forEach { <caret>(key, v) -> }
-}

@@ -15,8 +15,6 @@
     <module name="intellij.dev.psiViewer"/>
     <module name="intellij.dev.codeInsight"/>
     <module name="intellij.java.dev"/>
-    <module name="intellij.groovy.dev"/>
-    <module name="intellij.kotlin.dev"/>
     <module name="intellij.platform.statistics.devkit"/>
     <module name="intellij.php.dev"/>
   </content>

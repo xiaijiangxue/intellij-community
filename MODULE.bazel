@@ -86,9 +86,6 @@ register_toolchains(
 
 bazel_dep(name = "rules_python", version = "1.7.0")
 
-kotlin_test_deps = use_repo_rule("//plugins/kotlin:kotlin_test_dependencies.bzl", "kotlin_test_deps")
-
-kotlin_test_deps(name = "kotlin_test_deps")
 
 include("//:debugger_test_deps.MODULE.bazel")
 

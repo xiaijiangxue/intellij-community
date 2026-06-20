@@ -5,10 +5,6 @@
   - name: intellij.dev.psiViewer
   - name: intellij.dev.codeInsight
   - name: intellij.java.dev
-  - name: intellij.kotlin.dev
-- name: lib/modules/intellij.groovy.dev.jar
-  contentModules:
-  - name: intellij.groovy.dev
 - name: lib/modules/intellij.php.dev.jar
   contentModules:
   - name: intellij.php.dev

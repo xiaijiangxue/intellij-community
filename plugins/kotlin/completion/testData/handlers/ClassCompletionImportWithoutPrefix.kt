@@ -1,7 +1,0 @@
-// FIR_COMPARISON
-// FIR_IDENTICAL
-// See: KTIJ-36297
-
-val test : <caret>
-
-// ELEMENT: Int

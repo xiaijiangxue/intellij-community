@@ -1,2 +1,0 @@
-Usage of object test.Obj that is not safe to delete.
-Usage of object test.Obj that is not safe to delete.

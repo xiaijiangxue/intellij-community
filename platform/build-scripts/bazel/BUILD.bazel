@@ -46,7 +46,9 @@ kt_jvm_library(
 
 kt_jvm_library(
     name = "jps_to_bazel-lib",
-    srcs = glob(["src/**/*.kt"]),
+    srcs = glob(["src/**/*.kt"],
+        allow_empty = True,
+    ),
     runtime_deps = [],
     deps = [
         ":kotlin_serialization",
@@ -68,7 +70,9 @@ kt_jvm_library(
 
 kt_jvm_library(
     name = "bazel-generator-integration-tests-lib",
-    srcs = glob(["test/**/*.kt"]),
+    srcs = glob(["test/**/*.kt"],
+        allow_empty = True,
+    ),
     associates = [":jps_to_bazel-lib"],
     deps = [
         "@j2b_maven//:junit_junit",

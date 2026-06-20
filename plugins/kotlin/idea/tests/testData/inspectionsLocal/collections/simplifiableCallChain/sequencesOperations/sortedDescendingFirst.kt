@@ -1,2 +1,0 @@
-// WITH_STDLIB
-val x: Int = sequenceOf(1, 3, 2).<caret>sortedDescending().first()

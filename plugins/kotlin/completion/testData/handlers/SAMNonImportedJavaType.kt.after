@@ -1,7 +1,0 @@
-
-fun test(): Comparator<String> {
-    return Comparator { p0, p1 -> <caret> }
-}
-
-// ELEMENT: Comparator
-// TAIL_TEXT: " { T, T -> ... } (function: (T!, T!) -> Int) (kotlin)"

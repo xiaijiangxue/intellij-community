@@ -1,8 +1,0 @@
-class Bar {
-  void f() {}
-
-  private void foo() {
-    f();
-    Runnable r = this::f;
-  }
-}

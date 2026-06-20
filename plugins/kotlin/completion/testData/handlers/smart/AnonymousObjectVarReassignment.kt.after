@@ -1,8 +1,0 @@
-abstract class Foo
-
-fun test(){
-    var x : Foo
-    x = object : Foo() {}
-}
-
-// ELEMENT: object

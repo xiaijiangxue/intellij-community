@@ -38,6 +38,7 @@ jvm_library(
     resource_strip_prefix = "plugin-resources",
     resources = glob(
         ["plugin-resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     exports = [
@@ -308,6 +309,7 @@ jvm_library(
     resource_strip_prefix = "testData",
     resources = glob(
         ["testData/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     exports = [
@@ -408,8 +410,6 @@ jvm_library(
         "//platform/util:util-ui_test_lib",
         "//platform/util-ex",
         "//platform/util-ex:util-ex_test_lib",
-        "//plugins/groovy",
-        "//plugins/groovy:groovy_test_lib",
         "//libraries/kotlinx/coroutines/core",
         "//libraries/kotlinx/coroutines/core:core_test_lib",
         "//platform/workspace/jps",
@@ -454,8 +454,6 @@ jvm_library(
         "//platform/util/concurrency:concurrency_test_lib",
         "//platform/testRunner",
         "//platform/testRunner:testRunner_test_lib",
-        "//plugins/groovy:groovy-tests",
-        "//plugins/groovy:groovy-tests_test_lib",
         "//platform/statistics",
         "//platform/statistics:statistics_test_lib",
         "//libraries/junit4",

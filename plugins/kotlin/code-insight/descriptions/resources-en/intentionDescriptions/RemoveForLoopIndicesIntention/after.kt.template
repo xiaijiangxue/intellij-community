@@ -1,5 +1,0 @@
-fun foo(bar: List<String>) {
-      for (<spot>value: String in bar</spot>) {
-          println(value)
-      }
-  }

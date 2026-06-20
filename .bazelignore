@@ -3,6 +3,8 @@ lib
 build/jvm-rules
 # a separate bazel project
 platform/build-scripts/bazel
+# android repo is checked out as subdirectory but has its own BUILD files
+android
 # test data
 android/apkanalyzer/gradle/integration-tests/projects
 # currently not required

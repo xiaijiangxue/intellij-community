@@ -1,1 +1,0 @@
-object A : X(), I

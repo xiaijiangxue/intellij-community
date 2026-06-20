@@ -1,6 +1,0 @@
-// FIR_IDENTICAL
-// FIR_COMPARISON
-val a: <caret>
-
-// ELEMENT: Foo
-// TYPE_AFTER_COMPLETED: Fo

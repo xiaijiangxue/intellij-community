@@ -1,8 +1,0 @@
-
-fun foo() {
-
-    FOO_BAR_ENUM<caret>
-}
-
-// ELEMENT: FOO_BAR_ENUM_ENTRY
-// INVOCATION_COUNT: 2

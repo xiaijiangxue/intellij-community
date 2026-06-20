@@ -1,8 +1,0 @@
-// WITH_STDLIB
-fun test() {
-    Foo().bar().<caret>equals("ABC", ignoreCase = true)
-}
-
-class Foo {
-    fun bar(): String = ""
-}

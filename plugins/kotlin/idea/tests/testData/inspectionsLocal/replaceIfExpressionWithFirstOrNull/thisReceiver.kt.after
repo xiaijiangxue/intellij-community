@@ -1,6 +1,0 @@
-// FIX: Replace with 'firstOrNull()'
-// WITH_STDLIB
-
-fun IntArray.test(): Int? {
-    return this.firstOrNull()
-}

@@ -1,3 +1,0 @@
-package implicit
-
-class C

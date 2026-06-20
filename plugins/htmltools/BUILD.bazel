@@ -149,8 +149,6 @@ jvm_library(
         "//plugins/grazie/src:core_test_lib",
         "//xml/xml-psi-api:psi",
         "//xml/xml-psi-api:psi_test_lib",
-        "//xml/tests",
-        "//xml/tests:tests_test_lib",
         "//platform/core-ui",
         "//platform/core-ui:core-ui_test_lib",
         "//tools/intellij.tools.ide.metrics.benchmark:ide-metrics-benchmark",

@@ -1,6 +1,0 @@
-import kotlin.String
-
-// NO_TEMPLATE_TESTING
-class String {}
-
-val x: String = ""

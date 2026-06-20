@@ -1,7 +1,0 @@
-package example.app
-
-import example.utils.SomeObject
-
-fun test(){
-    SomeObject.objProperty
-}

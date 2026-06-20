@@ -1,8 +1,0 @@
-interface I1
-inline fun <reified T: I1> take(o: Any?) {
-    if (o is T) {
-        val t<caret> = o
-    }
-}
-// CHOOSE_ELEMENT: 1
-// AFTER-WARNING: Variable 't' is never used

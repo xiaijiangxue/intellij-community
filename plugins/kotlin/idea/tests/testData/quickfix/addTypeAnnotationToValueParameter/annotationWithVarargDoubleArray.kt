@@ -1,7 +1,0 @@
-// "Add type 'Double' to parameter 'value'" "true"
-// K2_ERROR: An explicit type is required on a value parameter.
-// K2_ERROR: Initializer type mismatch: expected 'Array<out ??? (No type for parameter)>', actual 'DoubleArray'.
-
-class CollectionDefault(vararg val value = doubleArrayOf(1.0, 2.2)<caret>)
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddTypeAnnotationToValueParameterFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.k2.codeinsight.fixes.AddTypeAnnotationToValueParameterFixFactory$AddTypeAnnotationToValueParameterFix

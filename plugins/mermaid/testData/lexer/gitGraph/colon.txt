@@ -1,5 +1,0 @@
-GitGraph.GIT_GRAPH ('gitGraph')
-COLON (':')
-EOL ('\n')
-WHITE_SPACE ('  ')
-GitGraph.COMMIT ('commit')

@@ -22,7 +22,6 @@ import org.jetbrains.intellij.build.impl.patchOsSpecificPluginXml
 import org.jetbrains.intellij.build.impl.projectStructureMapping.DistributionFileEntry
 import org.jetbrains.intellij.build.impl.projectStructureMapping.ProjectLibraryEntry
 import org.jetbrains.intellij.build.io.copyDir
-import org.jetbrains.intellij.build.kotlin.CommunityKotlinPluginBuilder
 import org.jetbrains.intellij.build.python.PythonCommunityPluginModules
 import org.jetbrains.intellij.build.telemetry.TraceManager.spanBuilder
 import org.jetbrains.intellij.build.telemetry.use
@@ -68,7 +67,6 @@ object CommunityRepositoryModules {
       spec.mainJarName = "uiDesigner.jar"
       spec.withModule("intellij.java.guiForms.jps", "jps/java-guiForms-jps.jar")
     },
-    CommunityKotlinPluginBuilder.kotlinPlugin(),
     pluginAuto(listOf("intellij.vcs.git")) { spec ->
       spec.withModule("intellij.vcs.git.rt", "git4idea-rt.jar")
     },
@@ -731,30 +729,6 @@ object CommunityRepositoryModules {
     }
   }
 
-  fun groovyPlugin(additionalModules: List<String> = emptyList(), addition: ((PluginLayout.PluginLayoutSpec) -> Unit)? = null): PluginLayout {
-    return pluginAutoWithCustomDirName("intellij.groovy") { spec ->
-      spec.directoryName = "Groovy"
-      spec.mainJarName = "Groovy.jar"
-      spec.withModules(
-        listOf(
-          "intellij.groovy.psi",
-          "intellij.groovy.structuralSearch",
-        )
-      )
-      spec.withModule("intellij.groovy.jps", "groovy-jps.jar")
-      spec.withModule("intellij.groovy.rt", "groovy-rt.jar")
-      spec.withModule("intellij.groovy.spock.rt", "groovy-spock-rt.jar")
-      spec.withModule("intellij.groovy.rt.classLoader", "groovy-rt-class-loader.jar")
-      spec.withModule("intellij.groovy.constants.rt", "groovy-constants-rt.jar")
-      spec.withModules(additionalModules)
-
-      spec.excludeFromModule("intellij.groovy.psi", "standardDsls/**")
-      spec.withResource("groovy-psi/resources/standardDsls", "lib/standardDsls")
-      spec.withResource("hotswap/gragent.jar", "lib/agent")
-      spec.withResource("groovy-psi/resources/conf", "lib")
-      addition?.invoke(spec)
-    }
-  }
 }
 
 private suspend fun copyAnt(mainModule: String, pluginDir: Path, context: BuildContext): List<DistributionFileEntry> {

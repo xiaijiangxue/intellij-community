@@ -1,9 +1,0 @@
-// "Replace '@JvmField' with 'const'" "true"
-// WITH_STDLIB
-// K2_ERROR: JvmField has no effect on a private property.
-object Foo {
-    <caret>@JvmField private val a = "Lorem ipsum"
-}
-
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.ReplaceJvmFieldWithConstFix
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.ReplaceJvmFieldWithConstFix

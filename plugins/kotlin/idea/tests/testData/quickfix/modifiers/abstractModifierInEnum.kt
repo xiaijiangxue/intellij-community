@@ -1,8 +1,0 @@
-// "Make 'A' not abstract" "true"
-// K2_ERROR: Modifier 'abstract' is not applicable to 'enum class'.
-<caret>abstract enum class A() {
-}
-
-
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.RemoveModifierFixBase
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.RemoveModifierFixBase

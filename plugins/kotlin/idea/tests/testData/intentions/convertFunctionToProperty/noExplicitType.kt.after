@@ -1,2 +1,0 @@
-// PRIORITY: LOW
-val foo<caret> get() = ""

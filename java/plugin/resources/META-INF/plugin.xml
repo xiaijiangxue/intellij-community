@@ -80,7 +80,6 @@
     <module name="intellij.java.debugger.impl.shared" loading="embedded"/>
     <module name="intellij.java.execution.impl.shared" loading="embedded"/>
     <module name="intellij.java.structuralSearch"/>
-    <module name="intellij.java.featuresTrainer"/>
     <module name="intellij.java.performancePlugin" loading="optional"/>
     <module name="intellij.java.unscramble"/>
     <module name="intellij.java.vcs"/>

@@ -1,7 +1,0 @@
-// WITH_STDLIB
-// FIX: Replace with loop over elements
-fun IntArray.arrayToString(): String = buildString {
-    for (element in this@arrayToString) {
-        append(element)
-    }
-}

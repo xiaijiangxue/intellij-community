@@ -16,6 +16,7 @@ jvm_library(
     resource_strip_prefix = "resources",
     resources = glob(
         ["resources/**/*"],
+        allow_empty = True,
     ),
     visibility = ["//visibility:public"],
     deps = [
@@ -33,10 +34,8 @@ jvm_library(
         "//platform/projectModel-api:projectModel",
         "//platform/util:util-ui",
         "//platform/util-ex",
-        "//python:python-community-impl",
         "//plugins/evaluation-plugin/languages",
         "//plugins/evaluation-plugin/core",
-        "//python/python-sdk:sdk",
     ],
 )
 
@@ -64,10 +63,8 @@ jvm_library(
         "//platform/projectModel-api:projectModel_test_lib",
         "//platform/util:util-ui_test_lib",
         "//platform/util-ex:util-ex_test_lib",
-        "//python:python-community-impl_test_lib",
         "//plugins/evaluation-plugin/languages:languages_test_lib",
         "//plugins/evaluation-plugin/core:core_test_lib",
-        "//python/python-sdk:sdk_test_lib",
     ],
 )
 ### auto-generated section `build intellij.evaluationPlugin.languages.python` end

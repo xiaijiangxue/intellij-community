@@ -7,6 +7,7 @@ resourcegroup(
     name = "vcs-gitlab_resources",
     srcs = glob(
         ["gen-resources/**/*"],
+        allow_empty = True,
     ),
     strip_prefix = "gen-resources",
 )

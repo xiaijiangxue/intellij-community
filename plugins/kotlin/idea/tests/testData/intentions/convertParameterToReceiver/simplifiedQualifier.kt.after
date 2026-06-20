@@ -1,8 +1,0 @@
-// WITH_STDLIB
-class A {
-    fun foo3() = 42
-
-    fun String.test(<caret>) {
-        foo3()
-    }
-}

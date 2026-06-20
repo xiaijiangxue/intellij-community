@@ -1,3 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-
-val x: MutableList<Int> = ([1])

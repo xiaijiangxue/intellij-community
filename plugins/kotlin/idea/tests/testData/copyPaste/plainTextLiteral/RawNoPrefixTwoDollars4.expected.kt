@@ -1,1 +1,0 @@
-val test = """$${'$'}{don't turn me into expression}"""

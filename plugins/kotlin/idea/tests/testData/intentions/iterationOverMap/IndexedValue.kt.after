@@ -1,8 +1,0 @@
-// WITH_STDLIB
-// AFTER-WARNING: Parameter 'args' is never used
-
-fun main(args: Array<String>) {
-    for ((index, value) in listOf("a", "b").withIndex()) {
-        println("$index: $value")
-    }
-}

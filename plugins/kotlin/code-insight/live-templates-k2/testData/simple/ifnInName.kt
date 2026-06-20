@@ -1,1 +1,0 @@
-fun `do smth if<caret>`() {}

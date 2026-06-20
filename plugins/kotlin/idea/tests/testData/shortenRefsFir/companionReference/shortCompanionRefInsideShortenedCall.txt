@@ -1,2 +1,0 @@
-CompanionExtraPlain
-wrap(CompanionExtraPlain.cmpVal)

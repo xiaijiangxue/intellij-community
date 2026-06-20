@@ -1,4 +1,0 @@
-package target
-
-fun foo() {
-}

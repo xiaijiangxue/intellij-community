@@ -1,5 +1,0 @@
-// COMPILER_ARGUMENTS: -Xcollection-literals
-val list = buildList {
-        add(1)
-        addAll([2, 3])
-    }

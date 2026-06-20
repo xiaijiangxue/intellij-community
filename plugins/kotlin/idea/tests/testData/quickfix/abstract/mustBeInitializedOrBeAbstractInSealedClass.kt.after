@@ -1,8 +1,0 @@
-// "Make 'i' 'abstract'" "true"
-// K2_ERROR: Function 'i' without a body must be abstract.
-sealed class A() {
-    abstract fun <caret>i() : Int
-}
-
-// FUS_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddModifierFixMpp
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.quickfix.AddModifierFixMpp

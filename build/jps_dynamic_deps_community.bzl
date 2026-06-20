@@ -67,7 +67,7 @@ def _derive_targets_from_model(ctx, model):
         if iml_target not in all_iml:
             all_iml.append(iml_target)
 
-        # Skip modules that the converter also skips (standalone Bazel projects)
+        # Skip modules that the converter also skips (standalone Bazel projects, Android-dependent)
         if mod.module_name in SKIPPED_MODULES:
             continue
 

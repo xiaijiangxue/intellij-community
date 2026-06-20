@@ -1,1 +1,0 @@
-<error descr="Package annotations only allowed in a 'package-info.java' file">@Deprecated</error> package annotations.packageAnnotationNotInPackageInfo;

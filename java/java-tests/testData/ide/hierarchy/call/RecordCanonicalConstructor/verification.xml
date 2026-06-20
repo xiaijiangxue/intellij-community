@@ -1,4 +1,0 @@
-<node text="Person(String, String) (Person)" base="true">
-  <node text="Person(String) (Person)"/>
-  <node text="main(String[]) (Action)"/>
-</node>

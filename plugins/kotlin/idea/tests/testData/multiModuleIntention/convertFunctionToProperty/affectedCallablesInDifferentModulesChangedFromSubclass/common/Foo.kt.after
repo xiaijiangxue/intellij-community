@@ -1,5 +1,0 @@
-package common
-
-interface Foo {
-    val foo: String
-}

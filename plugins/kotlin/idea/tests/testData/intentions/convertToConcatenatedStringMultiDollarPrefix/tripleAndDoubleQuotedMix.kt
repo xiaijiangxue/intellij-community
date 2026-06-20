@@ -1,5 +1,0 @@
-// COMPILER_ARGUMENTS: -Xmulti-dollar-interpolation
-
-fun test(a: Any) {
-    $$"start$${a} \n $${"""\t\b\n all plain except ${a}"""} not $a end"<caret>
-}

@@ -1,6 +1,0 @@
-@RequiresOptIn()
-annotation class ReqOptinAnnotation
-
-
-@ReqOptinAnnotation
-class X {}

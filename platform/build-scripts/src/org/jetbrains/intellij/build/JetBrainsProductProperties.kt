@@ -37,11 +37,6 @@ val knownMissingModuleDependencies: List<String> = listOf(
   // todo not included into any plugin - investigate why and fix
   "intellij.javaee.jpa",
   "intellij.rider.plugins.fsharp",
-  // conditional xi-include
-  "kotlin.base.scripting.k1",
-  "kotlin.plugin.k2",
-  "kotlin-ultimate.common-native",
-  "kotlin-ultimate.native-debugger",
   // included using `withModule`
   "intellij.libraries.groovy",
   "intellij.python.frontend",

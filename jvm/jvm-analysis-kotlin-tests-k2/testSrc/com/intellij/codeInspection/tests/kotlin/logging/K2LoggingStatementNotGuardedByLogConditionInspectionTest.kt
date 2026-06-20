@@ -1,4 +1,0 @@
-package com.intellij.codeInspection.tests.kotlin.logging
-
-class K2LoggingStatementNotGuardedByLogConditionInspectionTest : KotlinLoggingStatementNotGuardedByLogConditionInspectionTest() {
-}

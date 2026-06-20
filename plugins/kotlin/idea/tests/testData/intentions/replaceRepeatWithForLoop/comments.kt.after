@@ -1,6 +1,0 @@
-// WITH_STDLIB
-fun foo() {
-    for (/* iteration */ index in 0..<3) {
-        println(index) // print index
-    }
-}

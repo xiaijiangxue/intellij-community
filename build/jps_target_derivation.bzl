@@ -13,6 +13,14 @@ SKIPPED_MODULES = [
     "intellij.platform.buildScripts.bazel",
     "intellij.tools.build.bazel.jvmIncBuilder",
     "intellij.tools.build.bazel.jvmIncBuilderTests",
+    "intellij.gradle.declarativeSync",
+    "intellij.gradle.declarativeSync.tests",
+    "intellij.gradle.dependencyUpdater",
+    "intellij.gradle.analysis",
+    "intellij.gradle.java",
+    "intellij.gradle.java.tests",
+    "intellij.gradle.tests.main",
+    "intellij.platform.externalSystem.dependencyUpdater.tests",
 ]
 
 # Custom modules with hardcoded Bazel packages and target names.

@@ -1,8 +1,0 @@
-// "Specify 'Unit' return type for enclosing function 'a'" "true"
-// K2_ERROR: Return type 'Nothing' needs to be specified explicitly.
-// K2_ERROR: Return type mismatch: expected 'Nothing', actual 'Unit'.
-
-fun a() = run { r<caret>eturn }
-
-
-// FUS_K2_QUICKFIX_NAME: org.jetbrains.kotlin.idea.k2.codeinsight.fixes.ChangeTypeQuickFixFactories$UpdateTypeQuickFix

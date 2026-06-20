@@ -1,5 +1,0 @@
-// FILE: before.kt
-fun <T> echo(value: T): T = va<caret>lue
-
-// FILE: after.kt
-fun <<caret>T> echo(value: T): T = value

@@ -1,8 +1,0 @@
-// COMPILER_ARGUMENTS: -Xexplicit-backing-fields
-interface Parent
-class Child : Parent
-
-class Point {
-    val `pro p`: Parent
-        field<caret> = Child()
-}

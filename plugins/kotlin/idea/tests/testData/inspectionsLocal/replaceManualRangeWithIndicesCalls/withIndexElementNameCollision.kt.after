@@ -1,9 +1,0 @@
-// WITH_STDLIB
-// FIX: Replace with 'withIndex()'
-fun test() {
-    val element = "existing"
-    val list = listOf("a", "b", "c")
-    for ((i, element1) in list.withIndex()) {
-        println("Index $i: $element1, also $element")
-    }
-}

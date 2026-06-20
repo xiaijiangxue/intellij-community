@@ -74,8 +74,6 @@ jvm_library(
         "//platform/testFramework",
         "//platform/testFramework/junit5",
         "//platform/util/jdom",
-        "//plugins/kotlin/base/testFramework",
-        "//plugins/kotlin:kotlin-plugin-community-main",
     ],
 )
 
@@ -95,7 +93,6 @@ jvm_library(
     runtime_deps = [
         # do not sort,
         ":eel-codegen",
-        "//plugins/kotlin:kotlin-plugin-community-main_test_lib",
         "//platform/ide-core:ide-core_test_lib",
     ],
     deps = [
@@ -135,10 +132,6 @@ jvm_library(
         "//platform/util/jdom:jdom_test_lib",
         "//platform/util-ex",
         "//platform/util-ex:util-ex_test_lib",
-        "//plugins/kotlin/base/testFramework",
-        "//plugins/kotlin/base/testFramework:testFramework_test_lib",
-        "//plugins/kotlin/base/indices",
-        "//plugins/kotlin/base/indices:indices_test_lib",
         "//platform/execution",
         "//platform/execution:execution_test_lib",
         "//platform/ide-core",

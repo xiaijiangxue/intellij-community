@@ -1,5 +1,0 @@
-<idea-plugin visibility="public">
-  <dependencies>
-    <module name="intellij.python.psi"/>
-  </dependencies>
-</idea-plugin>

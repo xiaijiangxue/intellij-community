@@ -1,6 +1,0 @@
-if (condition) {
-    do {
-        action1()
-        action2()
-    } while (<selection><caret>true</selection>)
-}

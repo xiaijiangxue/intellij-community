@@ -1,8 +1,0 @@
-class AbsClass {
-    fun op() {}
-}
-
-fun main() {
-    AbsClass().op()
-}
-
