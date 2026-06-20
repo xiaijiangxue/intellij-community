@@ -77,7 +77,10 @@ internal fun generateDeps(
     val isExported = dependencyExtension.isExported
 
     if (element is JpsModuleDependency) {
-      val dependencyModule = element.moduleReference.resolve()!!
+      val dependencyModule = element.moduleReference.resolve() ?: continue
+      if (context.isSkippedModule(dependencyModule)) {
+        continue
+      }
       val dependencyModuleDescriptor = context.getKnownModuleDescriptorOrError(dependencyModule)
       val label = BazelLabel(
         label = context.getBazelDependencyLabel(module = dependencyModuleDescriptor, dependent = module),

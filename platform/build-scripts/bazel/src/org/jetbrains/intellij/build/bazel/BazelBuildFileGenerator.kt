@@ -123,9 +123,14 @@ internal class BazelBuildFileGenerator(
   }
 
   private val moduleToDescriptor = IdentityHashMap<JpsModule, ModuleDescriptor>()
+  private val skippedModuleNames = HashSet<String>()
 
   fun getKnownModuleDescriptorOrError(module: JpsModule): ModuleDescriptor {
     return moduleToDescriptor.get(module) ?: error("No descriptor for module ${module.name}")
+  }
+
+  fun isSkippedModule(module: JpsModule): Boolean {
+    return module.name in skippedModuleNames
   }
 
   fun getModuleDescriptor(module: JpsModule): ModuleDescriptor {
@@ -389,48 +394,56 @@ internal class BazelBuildFileGenerator(
 
       if (module.name == "intellij.platform.buildScripts.bazel") {
         // Skip bazel generator itself since it's a standalone Bazel project
+        skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
         continue
       }
 
       if (module.name == "intellij.tools.build.bazel.jvmIncBuilder" || module.name == "intellij.tools.build.bazel.jvmIncBuilderTests") {
         // Skip bazel generator itself since it's a standalone Bazel project
+        skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
         continue
       }
 
       if (module.name == "intellij.gradle.declarativeSync" || module.name == "intellij.gradle.declarativeSync.tests") {
         // Gradle declarative sync modules are not yet supported in Bazel
+        skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
         continue
       }
 
       if (module.name == "intellij.gradle.dependencyUpdater") {
         // Depends on Android-only modules not available in Community Bazel build
+        skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
         continue
       }
 
       if (module.name == "intellij.gradle.analysis" || module.name == "intellij.gradle.java") {
         // Depends on Android-only modules not available in Community Bazel build
+        skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
         continue
       }
 
       if (module.name == "intellij.gradle.java.tests" || module.name == "intellij.gradle.tests.main") {
         // Depends on Android-only modules not available in Community Bazel build
+        skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
         continue
       }
 
       if (module.name == "intellij.platform.externalSystem.dependencyUpdater.tests") {
         // Depends on intellij.gradle.dependencyUpdater which is Android-dependent
+        skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
         continue
       }
 
       if (module.name.startsWith("intellij.android.")) {
         // Android modules are excluded from Community Bazel build via .bazelignore
+        skippedModuleNames.add(module.name)
         skippedModules.add(descriptor)
         continue
       }
