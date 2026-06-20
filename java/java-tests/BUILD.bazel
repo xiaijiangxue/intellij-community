@@ -197,8 +197,6 @@ jvm_library(
         "//plugins/ui-designer:java-guiForms-designer_test_lib",
         "//java/execution/openapi:java-execution",
         "//java/execution/openapi:java-execution_test_lib",
-        "//platform/platform-tests:tests",
-        "//platform/platform-tests:tests_test_lib",
         "//java/java-indexing-api:indexing",
         "//java/java-indexing-api:indexing_test_lib",
         "//platform/external-system-api:externalSystem",

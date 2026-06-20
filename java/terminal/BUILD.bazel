@@ -37,8 +37,6 @@ jvm_library(
         "//java/terminal/backend:backend_test_lib",
         "//platform/core-api:core",
         "//platform/core-api:core_test_lib",
-        "//platform/platform-tests:tests",
-        "//platform/platform-tests:tests_test_lib",
         "//platform/testFramework",
         "//platform/testFramework:testFramework_test_lib",
         "//java/execution/impl",

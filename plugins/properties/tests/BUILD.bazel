@@ -88,8 +88,6 @@ jvm_library(
         "//plugins/properties:properties-backend_test_lib",
         "//java/testFramework",
         "//java/testFramework:testFramework_test_lib",
-        "//platform/platform-tests:tests",
-        "//platform/platform-tests:tests_test_lib",
         "//platform/boot",
         "//platform/boot:boot_test_lib",
         "//platform/core-ui",

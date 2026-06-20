@@ -21,7 +21,6 @@ jvm_library(
     visibility = ["//visibility:public"],
     deps = [
         # do not sort,
-        "//python/python-psi-api:psi",
         "//plugins/sh/core",
         "//platform/util",
         "//platform/core-api:core",
@@ -41,7 +40,6 @@ jvm_library(
     runtime_deps = [
         # do not sort,
         ":python",
-        "//python/python-psi-api:psi_test_lib",
         "//plugins/sh/core:core_test_lib",
         "//platform/util:util_test_lib",
         "//platform/core-api:core_test_lib",
