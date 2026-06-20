@@ -105,8 +105,6 @@ jvm_library(
         "//platform/testFramework:testFramework_test_lib",
         "//plugins/git4idea/backend",
         "//plugins/git4idea/backend:backend_test_lib",
-        "//plugins/hg4idea:vcs-hg",
-        "//plugins/hg4idea:vcs-hg_test_lib",
         "//platform/vcs-tests:vcs-testFramework",
         "//platform/vcs-tests:vcs-testFramework_test_lib",
         "//platform/tasks-platform-api:tasks",
@@ -148,8 +146,6 @@ jvm_library(
         "//platform/lang-core:lang-core_test_lib",
         "//plugins/git4idea:vcs-git-backend-tests",
         "//plugins/git4idea:vcs-git-backend-tests_test_lib",
-        "//plugins/hg4idea:vcs-hg-tests",
-        "//plugins/hg4idea:vcs-hg-tests_test_lib",
     ],
 )
 ### auto-generated section `build intellij.tasks.tests` end

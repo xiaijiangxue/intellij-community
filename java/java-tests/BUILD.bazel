@@ -195,8 +195,6 @@ jvm_library(
         "//plugins/testng:testng_test_lib",
         "//plugins/ui-designer:java-guiForms-designer",
         "//plugins/ui-designer:java-guiForms-designer_test_lib",
-        "//plugins/eclipse",
-        "//plugins/eclipse:eclipse_test_lib",
         "//java/execution/openapi:java-execution",
         "//java/execution/openapi:java-execution_test_lib",
         "//platform/platform-tests:tests",
