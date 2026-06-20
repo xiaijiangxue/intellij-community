@@ -18,6 +18,9 @@ SKIPPED_MODULES = [
     "intellij.gradle.dependencyUpdater",
     "intellij.gradle.analysis",
     "intellij.gradle.java",
+    "intellij.gradle.java.tests",
+    "intellij.gradle.tests.main",
+    "intellij.platform.externalSystem.dependencyUpdater.tests",
 ]
 
 # Custom modules with hardcoded Bazel packages and target names.
