@@ -1,7 +1,9 @@
 // Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
+import kotlinx.collections.immutable.toPersistentList
 import org.jetbrains.annotations.ApiStatus
+import org.jetbrains.intellij.build.BuildContext
 import org.jetbrains.intellij.build.BuildOptions
 import org.jetbrains.intellij.build.OsFamily
 import org.jetbrains.intellij.build.buildCommunityStandaloneJpsBuilder
@@ -41,11 +43,20 @@ object OpenSourceCommunityInstallersBuildTarget {
     runBlocking(Dispatchers.Default) {
       val options = OPTIONS.copy(buildStepsToSkip = OPTIONS.buildStepsToSkip + BUILD_STEPS_DISABLED_FOR_GITHUB_ACTIONS)
       val context = createCommunityBuildContext(options)
+      filterUnavailablePluginLayouts(context)
       context.compileModules(moduleNames = null, includingTestsInModules = listOf("intellij.platform.jps.build.tests"))
       buildDistributions(context)
       spanBuilder("build standalone JPS").use {
         buildCommunityStandaloneJpsBuilder(targetDir = context.paths.artifactDir.resolve("jps"), context)
       }
     }
+  }
+
+  private fun filterUnavailablePluginLayouts(context: BuildContext) {
+    val outputProvider = context.outputProvider
+    val productLayout = context.productProperties.productLayout
+    productLayout.pluginLayouts = productLayout.pluginLayouts
+      .filter { layout -> layout.includedModules.all { outputProvider.findModule(it.moduleName) != null } }
+      .toPersistentList()
   }
 }

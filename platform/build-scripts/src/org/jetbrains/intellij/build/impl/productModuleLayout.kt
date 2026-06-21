@@ -12,6 +12,7 @@ import org.jetbrains.intellij.build.BuildContext
 import org.jetbrains.intellij.build.CompilationContext
 import org.jetbrains.intellij.build.ContentModuleFilter
 import org.jetbrains.intellij.build.PLUGIN_XML_RELATIVE_PATH
+import org.jetbrains.intellij.build.findUnprocessedDescriptorContent
 import org.jetbrains.intellij.build.classPath.DescriptorSearchScope
 import org.jetbrains.intellij.build.classPath.XIncludeElementResolverImpl
 import org.jetbrains.intellij.build.classPath.resolveAndEmbedContentModuleDescriptor
@@ -112,7 +113,7 @@ private data class ContentModuleData(
   val loadingRule: String?,
 )
 
-private fun collectContentModules(
+private suspend fun collectContentModules(
   rootElement: Element,
   pluginMainModuleName: String?,
   context: BuildContext,
@@ -137,12 +138,32 @@ private fun collectContentModules(
           iterator.remove()
           continue
         }
+        if (context.productProperties.productLayout.skipUnresolvedContentModules && !isContentModuleDescriptorAvailable(moduleName, context)) {
+          Span.current().addEvent("Module '$moduleName' is excluded from ${if (pluginMainModuleName == null) "product" else "plugin $pluginMainModuleName"} because its descriptor is not available in module output")
+          iterator.remove()
+          continue
+        }
       }
 
       result.add(ContentModuleData(element = moduleElement, name = moduleName, loadingRule = loadingRule))
     }
   }
   return result
+}
+
+private suspend fun isContentModuleDescriptorAvailable(moduleName: String, context: BuildContext): Boolean {
+  val jpsModuleName = moduleName.substringBeforeLast('/')
+  val module = context.outputProvider.findModule(jpsModuleName) ?: return false
+  return try {
+    findUnprocessedDescriptorContent(
+      module = module,
+      path = contentModuleNameToDescriptorFileName(moduleName),
+      outputProvider = context.outputProvider,
+    ) != null
+  }
+  catch (_: Throwable) {
+    false
+  }
 }
 
 internal suspend fun filterAndProcessContentModules(

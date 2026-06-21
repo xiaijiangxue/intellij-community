@@ -18,7 +18,6 @@ import java.nio.file.Path
 
 val MAVEN_ARTIFACTS_ADDITIONAL_MODULES: PersistentList<String> = persistentListOf(
   "intellij.tools.jps.build.standalone",
-  "intellij.devkit.jps",
   "intellij.idea.community.build.tasks",
   "intellij.platform.debugger.testFramework",
   "intellij.platform.vcs.testFramework",
@@ -173,7 +172,10 @@ open class AndroidStudioProperties(communityHomeDir: Path) : IdeaCommunityProper
       "intellij.android.plugin.descriptor",
       "intellij.android.smali",
     )
-    productLayout.pluginLayouts = IDEA_COMMUNITY_PLUGIN_LAYOUTS + persistentListOf(*CommunityRepositoryModules.androidPlugin())
+    productLayout.pluginLayouts = IDEA_COMMUNITY_PLUGIN_LAYOUTS + persistentListOf(
+      CommunityRepositoryModules.androidDesignPlugin(),
+      *CommunityRepositoryModules.androidPlugin(),
+    )
   }
 
   override fun getProductContentDescriptor(): ProductModulesContentSpec = productModules {

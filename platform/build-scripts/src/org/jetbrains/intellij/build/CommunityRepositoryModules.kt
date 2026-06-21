@@ -22,7 +22,6 @@ import org.jetbrains.intellij.build.impl.patchOsSpecificPluginXml
 import org.jetbrains.intellij.build.impl.projectStructureMapping.DistributionFileEntry
 import org.jetbrains.intellij.build.impl.projectStructureMapping.ProjectLibraryEntry
 import org.jetbrains.intellij.build.io.copyDir
-import org.jetbrains.intellij.build.python.PythonCommunityPluginModules
 import org.jetbrains.intellij.build.telemetry.TraceManager.spanBuilder
 import org.jetbrains.intellij.build.telemetry.use
 import java.net.URI
@@ -191,15 +190,6 @@ object CommunityRepositoryModules {
       spec.withModule("intellij.testng.rt", "testng-rt.jar")
       spec.withProjectLibrary("TestNG")
     },
-    pluginAuto(listOf("intellij.devkit")) { spec ->
-      spec.withModule("intellij.devkit.jps")
-
-      spec.bundlingRestrictions.includeInDistribution = PluginDistribution.NOT_FOR_PUBLIC_BUILDS
-    },
-    pluginAuto(listOf("intellij.eclipse")) { spec ->
-      spec.withModule("intellij.eclipse.jps", "eclipse-jps.jar")
-      spec.withModule("intellij.eclipse.common", "eclipse-common.jar")
-    },
     plugin("intellij.java.coverage") { spec ->
       spec.withModule("intellij.java.coverage.rt")
       // explicitly pack JaCoCo as a separate JAR
@@ -210,7 +200,6 @@ object CommunityRepositoryModules {
       spec.mainJarName = "java-decompiler.jar"
       spec.withModule("intellij.java.decompiler.engine", spec.mainJarName)
     },
-    javaFXPlugin("intellij.javaFX.community"),
     pluginAuto("intellij.terminal") { spec ->
       spec.withModule("intellij.terminal.completion")
       spec.withResource("resources/shell-integrations", "shell-integrations")
@@ -218,8 +207,6 @@ object CommunityRepositoryModules {
     pluginAuto(listOf("intellij.textmate.plugin")) { spec ->
       spec.withResourceFromModule("intellij.textmate", "lib/bundles", "lib/bundles")
     },
-    PythonCommunityPluginModules.pythonCommunityPluginLayout(),
-    androidDesignPlugin(),
     pluginAuto(listOf("intellij.completionMlRankingModels")) { spec ->
       spec.bundlingRestrictions.includeInDistribution = PluginDistribution.NOT_FOR_RELEASE
     },
@@ -269,7 +256,7 @@ object CommunityRepositoryModules {
     },
   )
 
-  private fun androidDesignPlugin(mainModuleName: String = "intellij.android.design-plugin.descriptor"): PluginLayout {
+  fun androidDesignPlugin(mainModuleName: String = "intellij.android.design-plugin.descriptor"): PluginLayout {
     return pluginAutoWithCustomDirName(mainModuleName, "design-tools") { spec ->
       // modules:
       // design-tools.jar
@@ -720,14 +707,6 @@ object CommunityRepositoryModules {
 
       addition?.invoke(spec)
     }
-
-  fun javaFXPlugin(mainModuleName: String): PluginLayout {
-    return pluginAutoWithCustomDirName(mainModuleName, "javaFX") { spec ->
-      spec.withModule("intellij.javaFX.jps")
-      spec.withModule("intellij.javaFX.common", "javaFX-common.jar")
-      spec.withModule("intellij.javaFX.sceneBuilder", "rt/sceneBuilderBridge.jar")
-    }
-  }
 
 }
 
