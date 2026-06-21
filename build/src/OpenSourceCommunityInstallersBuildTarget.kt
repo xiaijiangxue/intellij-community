@@ -1,4 +1,5 @@
 // Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+import io.opentelemetry.api.trace.Span
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.collections.immutable.toPersistentList
@@ -6,8 +7,10 @@ import org.jetbrains.annotations.ApiStatus
 import org.jetbrains.intellij.build.BuildContext
 import org.jetbrains.intellij.build.BuildOptions
 import org.jetbrains.intellij.build.OsFamily
+import org.jetbrains.intellij.build.PLUGIN_XML_RELATIVE_PATH
 import org.jetbrains.intellij.build.buildCommunityStandaloneJpsBuilder
 import org.jetbrains.intellij.build.createCommunityBuildContext
+import org.jetbrains.intellij.build.findUnprocessedDescriptorContent
 import org.jetbrains.intellij.build.impl.buildDistributions
 import org.jetbrains.intellij.build.telemetry.TraceManager.spanBuilder
 import org.jetbrains.intellij.build.telemetry.use
@@ -52,11 +55,31 @@ object OpenSourceCommunityInstallersBuildTarget {
     }
   }
 
-  private fun filterUnavailablePluginLayouts(context: BuildContext) {
+  private suspend fun filterUnavailablePluginLayouts(context: BuildContext) {
     val outputProvider = context.outputProvider
     val productLayout = context.productProperties.productLayout
+    val unavailablePlugins = LinkedHashSet<String>()
     productLayout.pluginLayouts = productLayout.pluginLayouts
-      .filter { layout -> layout.includedModules.all { outputProvider.findModule(it.moduleName) != null } }
+      .filter { layout ->
+        val isAvailable = layout.includedModules.all { outputProvider.findModule(it.moduleName) != null } &&
+                          isPluginDescriptorAvailable(layout.mainModule, context)
+        if (!isAvailable) {
+          unavailablePlugins.add(layout.mainModule)
+          Span.current().addEvent("Plugin layout '${layout.mainModule}' is excluded because it is not available in module output")
+        }
+        isAvailable
+      }
       .toPersistentList()
+    productLayout.compatiblePluginsToIgnore = productLayout.compatiblePluginsToIgnore.addAll(unavailablePlugins)
+  }
+
+  private suspend fun isPluginDescriptorAvailable(moduleName: String, context: BuildContext): Boolean {
+    val module = context.outputProvider.findModule(moduleName) ?: return false
+    return try {
+      findUnprocessedDescriptorContent(module = module, path = PLUGIN_XML_RELATIVE_PATH, outputProvider = context.outputProvider) != null
+    }
+    catch (_: Throwable) {
+      false
+    }
   }
 }
