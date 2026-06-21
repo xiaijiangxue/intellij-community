@@ -4,9 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'Branch to build (default: master)'
+        description: 'Branch to build (defaults to the workflow ref)'
         required: false
-        default: 'master'
 
 jobs:
   distributions:
@@ -14,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6.0.2
         with:
-          ref: ${{ github.event.inputs.branch || 'master' }}
+          ref: ${{ github.event.inputs.branch || github.ref_name }}
       - name: Free disk space
         shell: bash
         run: |
