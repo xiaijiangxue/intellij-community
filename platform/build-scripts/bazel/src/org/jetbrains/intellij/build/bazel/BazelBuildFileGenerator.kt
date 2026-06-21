@@ -444,6 +444,14 @@ internal class BazelBuildFileGenerator(
         continue
       }
 
+      if (module.name == "intellij.junit.groovy.tests" ||
+          module.name == "intellij.maven.groovy" || module.name == "intellij.maven.groovy.tests") {
+        // Depends on Groovy plugin modules not available in Community Bazel build
+        skippedModuleNames.add(module.name)
+        skippedModules.add(descriptor)
+        continue
+      }
+
       if (module.name.startsWith("intellij.android.")) {
         // Android modules are excluded from Community Bazel build via .bazelignore
         skippedModuleNames.add(module.name)

@@ -27,6 +27,9 @@ SKIPPED_MODULES = [
     "intellij.gradle.java.toml.tests",
     "intellij.gradle.tests.main",
     "intellij.platform.externalSystem.dependencyUpdater.tests",
+    "intellij.junit.groovy.tests",
+    "intellij.maven.groovy",
+    "intellij.maven.groovy.tests",
 ]
 
 def is_skipped_module(module_name):

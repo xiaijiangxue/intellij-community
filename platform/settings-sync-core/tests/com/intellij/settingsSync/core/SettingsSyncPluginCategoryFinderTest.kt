@@ -1,9 +1,9 @@
 package com.intellij.settingsSync.core
 
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl
-import com.intellij.ide.plugins.getEnabledPlugin
 import com.intellij.idea.TestFor
 import com.intellij.openapi.components.SettingsCategory
+import com.intellij.openapi.extensions.PluginId
 import com.intellij.platform.pluginSystem.testFramework.PluginSetTestBuilder
 import com.intellij.platform.testFramework.plugins.PluginSpecBuilder
 import com.intellij.platform.testFramework.plugins.extensions
@@ -59,7 +59,7 @@ class SettingsSyncPluginCategoryFinderTest {
       body()
     }.installAt(pluginDirPath)
     val pluginSet = buildPluginSet()
-    return pluginSet.getEnabledPlugin("plugin")
+    return pluginSet.findEnabledPlugin(PluginId.getId("plugin")) as IdeaPluginDescriptorImpl
   }
 
   private fun checkCategory(pluginSpecBuilderBody: PluginSpecBuilder.() -> Unit, expectedCategory: SettingsCategory) {
