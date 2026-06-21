@@ -61,10 +61,13 @@ object OpenSourceCommunityInstallersBuildTarget {
     val unavailablePlugins = LinkedHashSet<String>()
     productLayout.pluginLayouts = productLayout.pluginLayouts
       .filter { layout ->
+        val hasPluginDescriptor = isPluginDescriptorAvailable(layout.mainModule, context)
         val isAvailable = layout.includedModules.all { outputProvider.findModule(it.moduleName) != null } &&
-                          isPluginDescriptorAvailable(layout.mainModule, context)
+                          hasPluginDescriptor
         if (!isAvailable) {
-          unavailablePlugins.add(layout.mainModule)
+          if (hasPluginDescriptor) {
+            unavailablePlugins.add(layout.mainModule)
+          }
           Span.current().addEvent("Plugin layout '${layout.mainModule}' is excluded because it is not available in module output")
         }
         isAvailable
