@@ -10,6 +10,7 @@ import org.jetbrains.intellij.build.OsFamily
 import org.jetbrains.intellij.build.PLUGIN_XML_RELATIVE_PATH
 import org.jetbrains.intellij.build.buildCommunityStandaloneJpsBuilder
 import org.jetbrains.intellij.build.createCommunityBuildContext
+import org.jetbrains.intellij.build.findFileInModuleSources
 import org.jetbrains.intellij.build.findUnprocessedDescriptorContent
 import org.jetbrains.intellij.build.impl.buildDistributions
 import org.jetbrains.intellij.build.telemetry.TraceManager.spanBuilder
@@ -59,6 +60,7 @@ object OpenSourceCommunityInstallersBuildTarget {
     val outputProvider = context.outputProvider
     val productLayout = context.productProperties.productLayout
     val unavailablePlugins = LinkedHashSet<String>()
+    val bundledPluginModules = context.getBundledPluginModules().toHashSet()
     productLayout.pluginLayouts = productLayout.pluginLayouts
       .filter { layout ->
         val hasPluginDescriptor = isPluginDescriptorAvailable(layout.mainModule, context)
@@ -73,6 +75,21 @@ object OpenSourceCommunityInstallersBuildTarget {
         isAvailable
       }
       .toPersistentList()
+
+    if (productLayout.buildAllCompatiblePlugins) {
+      for (module in context.project.modules) {
+        val moduleName = module.name
+        if (moduleName in bundledPluginModules ||
+            moduleName in productLayout.compatiblePluginsToIgnore ||
+            outputProvider.findModule(moduleName) == null ||
+            findFileInModuleSources(module = module, relativePath = PLUGIN_XML_RELATIVE_PATH, onlyProductionSources = true) == null ||
+            isPluginDescriptorAvailable(moduleName, context)) {
+          continue
+        }
+        unavailablePlugins.add(moduleName)
+        Span.current().addEvent("Compatible plugin '$moduleName' is ignored because it is not available in module output")
+      }
+    }
     productLayout.compatiblePluginsToIgnore = productLayout.compatiblePluginsToIgnore.addAll(unavailablePlugins)
   }
 
