@@ -479,52 +479,6 @@ jps_test(
 )
 ### auto-generated section `test intellij.gradle.tests` end
 
-### auto-generated section `build intellij.gradle.tests.main` start
-
-jvm_library(
-    name = "gradle-tests-main",
-    srcs = glob(
-        [],
-        allow_empty = True,
-    ),
-    module_name = "intellij.gradle.tests.main",
-    visibility = ["//visibility:public"],
-)
-
-jvm_library(
-    name = "gradle-tests-main_test_lib",
-    testonly = True,
-    srcs = glob(
-        [],
-        allow_empty = True,
-    ),
-    module_name = "intellij.gradle.tests.main",
-    resource_strip_prefix = "testResources",
-    resources = glob(
-        ["testResources/**/*"],
-    ),
-    visibility = ["//visibility:public"],
-    runtime_deps = [
-        # do not sort,
-        ":gradle-tests-main",
-        "//platform/bootstrap/coroutine",
-        "//platform/bootstrap/coroutine:coroutine_test_lib",
-        "//plugins/gradle/jps-plugin:jps-tests",
-        "//plugins/gradle/jps-plugin:jps-tests_test_lib",
-        "//plugins/gradle:gradle-tests",
-        "//plugins/gradle:gradle-tests_test_lib",
-        "//plugins/gradle/tooling-extension-impl:toolingExtension-tests",
-        "//plugins/gradle/tooling-extension-impl:toolingExtension-tests_test_lib",
-        "//plugins/gradle/native/tooling:gradle-native-tooling-tests",
-        "//plugins/gradle/native/tooling:gradle-native-tooling-tests_test_lib",
-        "//plugins/gradle/completion:completion-tests",
-        "//plugins/gradle/completion:completion-tests_test_lib",
-        "//plugins/gradle/completion/toml:gradle-completion-toml-tests",
-        "//plugins/gradle/completion/toml:gradle-completion-toml-tests_test_lib",
-    ],
-)
-### auto-generated section `build intellij.gradle.tests.main` end
-
 ### auto-generated section `iml intellij.gradle.tests.main` start
 exports_files(
     [

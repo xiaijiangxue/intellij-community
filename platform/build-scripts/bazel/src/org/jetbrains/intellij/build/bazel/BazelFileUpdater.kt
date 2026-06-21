@@ -16,6 +16,13 @@ internal class BazelFileUpdater(private val file: Path) {
     this.fileContent = fileContent.replace(pattern, "").trim().takeIf { it.isNotBlank() }
   }
 
+  fun removeSection(sectionName: String) {
+    val fileContent = fileContent ?: return
+    val escapedSectionName = Regex.escape(sectionName)
+    val pattern = Regex("### auto-generated section `$escapedSectionName` start[.\\n\\s\\S]*?### auto-generated section `$escapedSectionName` end")
+    this.fileContent = fileContent.replace(pattern, "").trim().takeIf { it.isNotBlank() }
+  }
+
   fun isSectionSkipped(sectionName: String): Boolean {
     val fileContent = fileContent ?: return false
     return fileContent.contains("### skip generation section `$sectionName`")

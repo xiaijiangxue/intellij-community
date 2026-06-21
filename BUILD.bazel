@@ -949,8 +949,6 @@ jvm_library(
         "//java/compiler:compiler-tests-main_test_lib",
         "//plugins/repository-search/completion:repository-search-completion-tests",
         "//plugins/repository-search/completion:repository-search-completion-tests_test_lib",
-        "//plugins/gradle:gradle-tests-main",
-        "//plugins/gradle:gradle-tests-main_test_lib",
         "//platform/vcs-tests:vcs-tests-main",
         "//platform/vcs-tests:vcs-tests-main_test_lib",
         "//java/java-tests:tests-main",
