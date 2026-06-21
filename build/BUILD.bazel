@@ -31,7 +31,7 @@ jps_to_bazel_targets_json(
 java_binary(
     name = "i_build_target",
     add_opens = INTELLIJ_ADD_OPENS,
-    data = ALL_COMMUNITY_TARGETS + [BAZEL_TARGETS_JSON_COMMUNITY],
+    data = ALL_PRODUCTION_COMMUNITY_TARGETS + ALL_LIBRARY_COMMUNITY_TARGETS + [BAZEL_TARGETS_JSON_COMMUNITY],
     jvm_flags = [
         "-Dintellij.build.bazel.targets.json.file=$(rlocationpath %s)" % BAZEL_TARGETS_JSON_COMMUNITY,
     ],
