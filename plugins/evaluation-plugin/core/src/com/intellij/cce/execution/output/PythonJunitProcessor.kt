@@ -1,4 +1,4 @@
-package com.intellij.cce.python.execution.output
+package com.intellij.cce.execution.output
 
 import com.intellij.util.createDocumentBuilder
 import org.w3c.dom.Document

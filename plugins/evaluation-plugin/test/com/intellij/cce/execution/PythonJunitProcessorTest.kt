@@ -1,6 +1,6 @@
 package com.intellij.cce.execution
 
-import com.intellij.cce.python.execution.output.PythonJunitProcessor
+import com.intellij.cce.execution.output.PythonJunitProcessor
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

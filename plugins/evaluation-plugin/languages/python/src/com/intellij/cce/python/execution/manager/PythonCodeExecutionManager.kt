@@ -9,7 +9,7 @@ import com.intellij.cce.evaluation.data.ExecutionMode
 import com.intellij.cce.execution.manager.CodeExecutionManager
 import com.intellij.cce.execution.output.ProcessExecutionLog
 import com.intellij.cce.python.execution.coverage.PythonTestCoverageProcessor
-import com.intellij.cce.python.execution.output.PythonJunitProcessor
+import com.intellij.cce.execution.output.PythonJunitProcessor
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.projectRoots.Sdk
